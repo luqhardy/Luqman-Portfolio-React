@@ -72,13 +72,13 @@ export default function Home() {
             href="https://shutokun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 m-1 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-1 px-2 py-1 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
               src="/shuutokun.png"
               alt="Shuutokun"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
 
             />
           </a>
@@ -86,16 +86,30 @@ export default function Home() {
             href="https://bunsekikun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
               src="/bunsekikun.png"
               alt="Bunsekikun"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               className="rounded-full"
             />
           </a>
+            <a
+            href="https://portfolio.luqmanhadi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 px-2 py-1 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
+          >
+            <Image
+              src="/portfolio.png"
+              alt="Portfolio"
+              width={100}
+              height={100}
+
+            />
+            </a>
         </div>
       </div>
     </div>
