@@ -6,9 +6,9 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center">
       <div className="font-noto-sans-jp text-center text-2xl text-white h-screen flex flex-col items-center justify-center">
         <h1>
-          <span className="font-bold">Luqman Hadi</span><br />
-          <span className="font-light text-base">ルクマン　ハディ</span><br />
-          <span className="font-light text-base">文部科学省外国人留学生　神戸電子専門学校　AIシステム開発学科　1年生</span>
+          <span className="font-bold text-3xl">Luqman Hadi</span><br />
+          <span className="font-light text-xl">ルクマン　ハディ</span><br />
+          <span className="font-thin text-sm">文部科学省外国人留学生　神戸電子専門学校　<br />AIシステム開発学科　1年生</span>
         </h1>
         <div className="mt-6 flex justify-center gap-4">
           <a
