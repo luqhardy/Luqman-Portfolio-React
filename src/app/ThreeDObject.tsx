@@ -21,5 +21,4 @@ export default function ThreeDObject() {
 }
 
 // DreiのGLTFローダー用型定義
-// @ts-expect-error
 useGLTF.preload("/model.glb");
