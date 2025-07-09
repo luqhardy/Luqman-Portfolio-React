@@ -4,9 +4,11 @@ import ThreeDObjectClient from "./ThreeDObjectClient";
 export default function Home() {
   return (
     <>
-    <div className="flex flex-col items-center justify-center">
-      <ThreeDObjectClient />
-      <div className="font-noto-sans-jp text-center text-2xl text-white h-screen flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center h-screen bg-black">
+      <div className="font-noto-sans-jp text-center text-2xl text-white flex flex-col items-center justify-center">
+        <div className="mb-2">
+          <ThreeDObjectClient />
+        </div>
         <h1>
           <span className="font-bold text-3xl">Luqman Hadi</span><br />
           <span className="font-light text-xl">ルクマン　ハディ</span><br />

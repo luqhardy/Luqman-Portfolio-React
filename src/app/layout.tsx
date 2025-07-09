@@ -40,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={clsx(notoSansJP.variable, geistSans.variable, geistMono.variable, "font-sans")}> 
-      <body className="antialiased">
+      <body className="antialiased" cz-shortcut-listen="true">
         {children}
       </body>
     </html>
