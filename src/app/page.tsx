@@ -1,9 +1,11 @@
 //import Image from "next/image";
+import ThreeDObjectClient from "./ThreeDObjectClient";
 
 export default function Home() {
   return (
     <>
     <div className="flex flex-col items-center justify-center">
+      <ThreeDObjectClient />
       <div className="font-noto-sans-jp text-center text-2xl text-white h-screen flex flex-col items-center justify-center">
         <h1>
           <span className="font-bold text-3xl">Luqman Hadi</span><br />
