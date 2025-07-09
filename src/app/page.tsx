@@ -69,7 +69,7 @@ export default function Home() {
         </div>
         <div className="mt-4 flex gap-4">
           <a
-            href="https://shutokun.vercel.app/"
+            href="https://shutokun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 m-1 rounded hover:bg-gray-900 text-white font-semibold transition"
@@ -83,7 +83,7 @@ export default function Home() {
             />
           </a>
           <a
-            href="https://bunsekikun.vercel.app/"
+            href="https://bunsekikun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-900 text-white font-semibold transition"
