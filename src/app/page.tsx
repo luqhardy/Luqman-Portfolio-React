@@ -96,7 +96,8 @@ export default function Home() {
               className="rounded-full"
             />
           </a>
-            <a
+        </div>
+                    <a
             href="https://portfolio.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -105,12 +106,11 @@ export default function Home() {
             <Image
               src="/portfolio.png"
               alt="Portfolio"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
 
             />
             </a>
-        </div>
       </div>
     </div>
     </>
