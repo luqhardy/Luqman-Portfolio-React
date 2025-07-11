@@ -37,7 +37,7 @@ export default function Home() {
           <span className="font-light text-xl">{content[language].name}</span><br />
           <span className="font-thin text-sm" style={{ whiteSpace: 'pre-line' }}>{content[language].subtitle}</span>
         </h1>
-        <div className="mt-6 flex justify-center gap-4 items-center">
+        <div className="mt-6 flex justify-center gap-4  mb-5 items-center">
           <a
             href="https://linkedin.com/in/luqman-hadi/"
             target="_blank"
@@ -79,18 +79,17 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="mt-4 flex gap-4">
-          <a
+        <a
             href="https://shutokun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2 py-1 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
-              src="/shuutokun.png"
+              src="/button1.png"
               alt="Shuutokun"
-              width={100}
-              height={100}
+              width={300}
+              height={300}
 
             />
           </a>
@@ -98,28 +97,40 @@ export default function Home() {
             href="https://bunsekikun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
-              src="/bunsekikun.png"
+              src="/button2.png"
               alt="Bunsekikun"
-              width={100}
-              height={100}
-              className="rounded-full"
+              width={300}
+              height={300}
             />
           </a>
-        </div>
+                              <a
+            href="https://iot.luqmanhadi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
+          >
+            <Image
+              src="/button3.png"
+              alt="Portfolio"
+              width={300}
+              height={300}
+
+            />
+            </a>
                     <a
             href="https://portfolio.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2 py-1 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
-              src="/portfolio.png"
+              src="/button4.png"
               alt="Portfolio"
-              width={200}
-              height={200}
+              width={300}
+              height={300}
 
             />
             </a>
