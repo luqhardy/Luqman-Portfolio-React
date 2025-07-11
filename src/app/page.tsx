@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-center h-screen bg-black">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
       <div className="font-noto-sans-jp text-center text-2xl text-white flex flex-col items-center justify-center">
         <div className="mb-2">
           <ThreeDObjectClient />
