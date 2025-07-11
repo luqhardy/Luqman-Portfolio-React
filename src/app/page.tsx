@@ -15,12 +15,12 @@ export default function Home() {
   const content = {
     ja: {
       name: "ルクマン　ハディ",
-      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生",
+      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n メール: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     },
     en: {
       name: "ルクマン　ハディ",
-      subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year",
+      subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year\n Contact: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     }
   };
