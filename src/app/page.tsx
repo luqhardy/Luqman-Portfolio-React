@@ -15,7 +15,7 @@ export default function Home() {
   const content = {
     ja: {
       name: "ルクマン　ハディ",
-      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n メール: hello@luqmanhadi.com",
+      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n マレーシア出身 慣れ果て村在住\nメール: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     },
     en: {
