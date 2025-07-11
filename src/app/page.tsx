@@ -124,7 +124,7 @@ export default function Home() {
             href="https://portfolio.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className="flex items-center gap-0 px-4 py-2 m-0 mb-20 rounded hover:bg-gray-900 text-white font-semibold transition"
           >
             <Image
               src="/button4.png"
