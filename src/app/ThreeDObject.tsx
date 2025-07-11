@@ -14,7 +14,7 @@ export default function ThreeDObject() {
         <ambientLight intensity={0.7} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
         <Model />
-        <OrbitControls enableZoom={true} autoRotate={true} enableDamping={true} />
+        <OrbitControls enableZoom={true} autoRotate={true} enableDamping={true} zoomToCursor={true} />
       </Canvas>
     </div>
   );
