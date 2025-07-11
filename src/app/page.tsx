@@ -80,7 +80,7 @@ export default function Home() {
           </div>
         </div>
         <a
-            href="https://shutokun.luqmanhadi.com/"
+            href="https://bunsekikun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
@@ -94,7 +94,7 @@ export default function Home() {
             />
           </a>
           <a
-            href="https://bunsekikun.luqmanhadi.com/"
+            href="https://shutokun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-0 px-4 py-2 m-0 rounded hover:bg-gray-900 text-white font-semibold transition"
