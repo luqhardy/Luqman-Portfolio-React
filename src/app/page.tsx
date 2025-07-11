@@ -35,7 +35,7 @@ export default function Home() {
         <h1>
           <span className="font-bold text-3xl">{content[language].main}</span><br />
           <span className="font-light text-xl">{content[language].name}</span><br />
-          <span className="font-thin text-sm" style={{ whiteSpace: 'pre-line' }}>{content[language].subtitle}</span>
+          <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>{content[language].subtitle}</span>
         </h1>
         <div className="mt-6 flex justify-center gap-4  mb-5 items-center">
           <a
