@@ -10,8 +10,8 @@ function Model() {
 export default function ThreeDObject() {
   return (
     <div style={{ width: "300px", height: "200px", marginTop: "50px" }}>
-      <Canvas camera={{ position: [0, 0, 2], fov: 30 }}>
-        <ambientLight intensity={0.7} />
+      <Canvas camera={{ position: [0, 0, 2], fov: 60 }}>
+        <ambientLight intensity={1} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
         <Model />
         <OrbitControls enableZoom={true} autoRotate={true} enableDamping={true} zoomToCursor={true} />
