@@ -134,11 +134,25 @@ export default function Home() {
 
             />
             </a>
+            <a
+            href="https://cloudis.luqmanhadi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-2xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+          >
+            <Image
+              src="/cloudis.png"
+              alt="Cloudis"
+              width={300}
+              height={300}
+
+            />
+            </a>
             <a  
             href="https://portfolio.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 mt-4 mb-20 rounded-2xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+            className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-2xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
               src="/button5.png"
@@ -148,6 +162,10 @@ export default function Home() {
 
             />
             </a>
+            <div className="text-xs text-gray-500 mb-10">
+              <p>© 2025 Luqman Hadi</p>
+              <p>All rights reserved.</p>
+              </div>
       </div>
     </div>
     </>
