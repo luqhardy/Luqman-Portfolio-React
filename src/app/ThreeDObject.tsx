@@ -1,5 +1,5 @@
 "use client";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, ThreeEvent } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
@@ -47,12 +47,12 @@ function Model() {
     <primitive
       object={scene}
       scale={0.7}
-      onPointerEnter={(e) => {
+      onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
         // Stop event propagation to prevent unintended effects on parent elements
         e.stopPropagation();
         setIsHovered(true);
       }}
-      onPointerLeave={(e) => {
+      onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
         e.stopPropagation();
         setIsHovered(false);
       }}
