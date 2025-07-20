@@ -8,6 +8,30 @@ import { mdiLinkedin } from '@mdi/js';
 import { mdiGithub } from '@mdi/js';
 import { mdiEmail } from '@mdi/js';
 
+const ClickableEmailSubtitle = ({ text }: { text: string }) => {
+  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
+  const match = text.match(emailRegex);
+
+  if (!match) {
+    return <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>{text}</span>;
+  }
+
+  const email = match[0];
+  const parts = text.split(email);
+  const beforeText = parts[0];
+  const afterText = parts[1] || '';
+
+  return (
+    <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>
+      {beforeText}
+      <a href={`mailto:${email}`} className="text-blue-400 hover:underline">
+        {email}
+      </a>
+      {afterText}
+    </span>
+  );
+};
+
 export default function Home() {
   const [language, setLanguage] = useState<'ja' | 'en'>('ja');
 
@@ -35,7 +59,7 @@ export default function Home() {
         <h1>
           <span className="font-bold text-3xl">{content[language].main}</span><br />
           <span className="font-light text-xl">{content[language].name}</span><br />
-          <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>{content[language].subtitle}</span>
+          <ClickableEmailSubtitle text={content[language].subtitle} />
         </h1>
         <div className="mt-6 flex justify-center gap-4  mb-5 items-center">
           <a
