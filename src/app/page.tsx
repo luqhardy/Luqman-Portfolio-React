@@ -35,7 +35,6 @@ const ClickableEmailSubtitle = ({ text }: { text: string }) => {
 export default function Home() {
   const [language, setLanguage] = useState<'ja' | 'en'>('ja');
 
-  // Text content for both languages
   const content = {
     ja: {
       name: "ルクマン　ハディ",
