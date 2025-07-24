@@ -1,7 +1,23 @@
-Deployed on Vercel
-[luqmanhadi.com](https://luqmanhadi.com) 
+# Luqman Hadi's Portfolio
 
+This is my personal portfolio website, built with Next.js, React, and Three.js. It serves as a central hub to showcase my projects and provide links to my professional profiles.
 
+**Live Site:** [luqmanhadi.com](https://luqmanhadi.com)
+
+## ✨ Features
+
+*   **Interactive 3D Model:** A personal 3D avatar as the centerpiece, created with React Three Fiber.
+*   **Bilingual Content:** Toggle between English and Japanese content.
+*   **Project Showcase:** Links to my other deployed projects.
+*   **Responsive Design:** Adapts to various screen sizes, from mobile to desktop.
+
+## 🛠️ Technologies Used
+
+*   **Framework:** [Next.js](https://nextjs.org/)
+*   **UI Library:** [React](https://react.dev/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **3D Graphics:** [Three.js](https://threejs.org/) & [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+*   **Deployment:** [Vercel](https://vercel.com/)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
