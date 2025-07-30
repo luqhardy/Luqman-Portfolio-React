@@ -7,11 +7,12 @@ import Icon from '@mdi/react';
 import { mdiLinkedin } from '@mdi/js';
 import { mdiGithub } from '@mdi/js';
 import { mdiEmail } from '@mdi/js';
+//import LiquidGlass from "liquid-glass-react";
+
 
 const ClickableEmailSubtitle = ({ text }: { text: string }) => {
   const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
   const match = text.match(emailRegex);
-
   if (!match) {
     return <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>{text}</span>;
   }
@@ -52,8 +53,8 @@ export default function Home() {
     <>
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
       <div className="font-noto-sans-jp text-center text-2xl text-white flex flex-col items-center justify-center">
-        <div className="mb-2 hover:scale-200 transition duration-500 ease-in-out flex justify-center items-center">
-          <ThreeDObjectClient />
+        <div >
+        <ThreeDObjectClient />
         </div>
         <h1>
           <span className="font-bold text-3xl">{content[language].main}</span><br />
@@ -103,10 +104,24 @@ export default function Home() {
           </div>
         </div>
         <a
+            href="https://pr.luqmanhadi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+          >
+            <Image
+              src="/jikopr.png"
+              alt="自己PR"
+              width={300}
+              height={300}
+
+            />
+          </a>
+        <a
             href="https://bunsekikun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 m-2 rounded-2xl hover:shadow-lg shadow-blue-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+            className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
           >
             <Image
               src="/button1.png"
@@ -120,7 +135,7 @@ export default function Home() {
             href="https://shutokun.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 m-2 rounded-2xl hover:shadow-lg shadow-white hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+            className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
           >
             <Image
               src="/button2.png"
@@ -133,7 +148,7 @@ export default function Home() {
             href="https://iot.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 m-2 rounded-2xl hover:shadow-lg shadow-yellow-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+            className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
               src="/button3.png"
@@ -147,7 +162,7 @@ export default function Home() {
             href="https://oshikatsu.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 m-2 mb-0 rounded-2xl hover:shadow-lg shadow-pink-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+            className="flex items-center gap-0 px-0 py-0 m-2 mb-0 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
               src="/button4.png"
@@ -161,7 +176,7 @@ export default function Home() {
             href="https://cloudis.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-2xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+            className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
               src="/cloudis.png"
@@ -175,7 +190,7 @@ export default function Home() {
             href="https://portfolio.luqmanhadi.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-2xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+            className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
               src="/button5.png"
