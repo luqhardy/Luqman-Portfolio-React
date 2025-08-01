@@ -33,6 +33,8 @@ const ClickableEmailSubtitle = ({ text }: { text: string }) => {
   );
 };
 
+
+
 export default function Home() {
   const [language, setLanguage] = useState<'ja' | 'en'>('ja');
 
@@ -47,6 +49,26 @@ export default function Home() {
       subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year\n Malaysian, based in Kobe City, Hyogo Pref, Japan\nContact: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     }
+  };
+  const buttons = {
+    ja: {
+      1: "/jp/pr.png",
+      2: "/jp/1.png",
+      3: "/jp/2.png",
+      4: "/jp/3.png",
+      5: "/jp/4.png",
+      6: "/jp/5.png",
+      7: "/jp/6.png",
+    },
+    en: {
+      1: "/en/pr.png",
+      2: "/en/1.png",
+      3: "/en/2.png",
+      4: "/en/3.png",
+      5: "/en/4.png",
+      6: "/en/5.png",
+      7: "/en/6.png",
+    },
   };
 
   return (
@@ -110,7 +132,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
           >
             <Image
-              src="/jikopr.png"
+              src={buttons[language][1]}
               alt="自己PR"
               width={300}
               height={300}
@@ -124,7 +146,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
           >
             <Image
-              src="/button1.png"
+              src={buttons[language][2]}
               alt="Shuutokun"
               width={300}
               height={300}
@@ -138,7 +160,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
           >
             <Image
-              src="/button2.png"
+              src={buttons[language][3]}
               alt="Bunsekikun"
               width={300}
               height={300}
@@ -151,7 +173,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
-              src="/button3.png"
+              src={buttons[language][4]}
               alt="Portfolio"
               width={300}
               height={300}
@@ -165,7 +187,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 mb-0 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
-              src="/button4.png"
+              src={buttons[language][5]}
               alt="Oshikatsu"
               width={300}
               height={300}
@@ -179,7 +201,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
-              src="/cloudis.png"
+              src={buttons[language][6]}
               alt="Cloudis"
               width={300}
               height={300}
@@ -193,7 +215,7 @@ export default function Home() {
             className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
           >
             <Image
-              src="/button5.png"
+              src={buttons[language][7]}
               alt="Portfolio"
               width={300}
               height={300}
