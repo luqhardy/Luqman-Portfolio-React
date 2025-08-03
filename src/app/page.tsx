@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ThreeDObjectClient from "./ThreeDObjectClient";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icon from '@mdi/react';
 import { mdiLinkedin } from '@mdi/js';
 import { mdiGithub } from '@mdi/js';
@@ -37,6 +37,25 @@ const ClickableEmailSubtitle = ({ text }: { text: string }) => {
 
 export default function Home() {
   const [language, setLanguage] = useState<'ja' | 'en'>('ja');
+  // Theme: 'system', 'light', or 'dark'
+  const [theme, setTheme] = useState<'system' | 'light' | 'dark'>('system');
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+
+  // Detect system theme
+  useEffect(() => {
+    const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (theme === 'system') {
+      setResolvedTheme(getSystemTheme());
+    } else {
+      setResolvedTheme(theme);
+    }
+    if (theme === 'system') {
+      const listener = (e: MediaQueryListEvent) => setResolvedTheme(e.matches ? 'dark' : 'light');
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener('change', listener);
+      return () => mq.removeEventListener('change', listener);
+    }
+  }, [theme]);
 
   const content = {
     ja: {
@@ -73,8 +92,30 @@ export default function Home() {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <div className="font-noto-sans-jp text-center text-2xl text-white flex flex-col items-center justify-center">
+    <div
+      className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
+        resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'
+      }`}
+    >
+      {/* Theme Toggle Button */}
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setTheme(theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : theme === 'light' ? 'system' : 'system')}
+          className={`p-2 rounded-full border border-gray-400 shadow-md transition-colors duration-300 focus:outline-none ${
+            resolvedTheme === 'dark' ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-gray-100 text-black hover:bg-gray-200'
+          }`}
+          aria-label="Toggle theme"
+        >
+          {theme === 'system' ? (
+            <span title="System">🖥️</span>
+          ) : theme === 'dark' ? (
+            <span title="Dark">🌙</span>
+          ) : (
+            <span title="Light">☀️</span>
+          )}
+        </button>
+      </div>
+      <div className={`font-noto-sans-jp text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
         <div >
         <ThreeDObjectClient />
         </div>
@@ -88,7 +129,7 @@ export default function Home() {
             href="https://linkedin.com/in/luqman-hadi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
           >
             <Icon path={mdiLinkedin} size={1} color="white" />
           </a>
@@ -96,7 +137,7 @@ export default function Home() {
             href="https://github.com/luqhardy"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
           >
             <Icon path={mdiGithub} size={1} />
           </a>
@@ -104,7 +145,7 @@ export default function Home() {
             href="mailto:hello@luqmanhadi.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-900 text-white font-semibold transition"
+            className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
           >
             <Icon path={mdiEmail} size={1} />
           </a>
@@ -222,10 +263,10 @@ export default function Home() {
 
             />
             </a>
-            <div className="text-xs text-gray-500 mb-10">
+            <div className={`text-xs mb-10 ${resolvedTheme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
               <p>© 2025 Luqman Hadi</p>
               <p>All rights reserved.</p>
-              </div>
+            </div>
       </div>
     </div>
     </>
