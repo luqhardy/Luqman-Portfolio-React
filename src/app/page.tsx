@@ -7,6 +7,7 @@ import Icon from '@mdi/react';
 import { mdiLinkedin } from '@mdi/js';
 import { mdiGithub } from '@mdi/js';
 import { mdiEmail } from '@mdi/js';
+import { Analytics } from "@vercel/analytics/react";
 //import LiquidGlass from "liquid-glass-react";
 
 
@@ -117,6 +118,7 @@ function Home() {
 
   return (
     <>
+    <Analytics />
     <div
       className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
         resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'
