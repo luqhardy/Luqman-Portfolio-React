@@ -223,7 +223,7 @@ function Home() {
               href="https://vocalaysia.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-green-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
             >
               <Image
                 src={buttons[language][2]}
