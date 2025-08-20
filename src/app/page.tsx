@@ -220,6 +220,7 @@ function Home() {
                 height={300}
 
               />
+               </a>
                         <a
               href="https://blog.luqmanhadi.com/"
               target="_blank"
