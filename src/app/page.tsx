@@ -98,23 +98,25 @@ function Home() {
   const buttons = {
     ja: {
       1: "/jp/pr.png",
-      2: "/jp/voca.png",
-      3: "/jp/1.png",
-      4: "/jp/2.png",
-      5: "/jp/3.png",
-      6: "/jp/4.png",
-      7: "/jp/5.png",
-      8: "/jp/6.png",
+      2: "/jp/blog.png",
+      3: "/jp/voca.png",
+      4: "/jp/1.png",
+      5: "/jp/2.png",
+      6: "/jp/3.png",
+      7: "/jp/4.png",
+      8: "/jp/5.png",
+      9: "/jp/6.png",
     },
     en: {
       1: "/en/pr.png",
-      2: "/en/voca.png",
-      3: "/en/1.png",
-      4: "/en/2.png",
-      5: "/en/3.png",
-      6: "/en/4.png",
-      7: "/en/5.png",
-      8: "/en/6.png",
+      2: "/en/blog.png",
+      3: "/en/voca.png",
+      4: "/en/1.png",
+      5: "/en/2.png",
+      6: "/en/3.png",
+      7: "/en/4.png",
+      8: "/en/5.png",
+      9: "/en/6.png",
     },
   };
 
@@ -218,6 +220,19 @@ function Home() {
                 height={300}
 
               />
+                        <a
+              href="https://blog.luqmanhadi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+            >
+              <Image
+                src={buttons[language][2]}
+                alt="Blog"
+                width={300}
+                height={300}
+
+              />
             </a>
                       <a
               href="https://vocalaysia.luqmanhadi.com/"
@@ -226,7 +241,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-green-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
             >
               <Image
-                src={buttons[language][2]}
+                src={buttons[language][3]}
                 alt="Vocalaysia"
                 width={300}
                 height={300}
@@ -240,7 +255,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
             >
               <Image
-                src={buttons[language][3]}
+                src={buttons[language][4]}
                 alt="Shuutokun"
                 width={300}
                 height={300}
@@ -254,7 +269,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
             >
               <Image
-                src={buttons[language][4]}
+                src={buttons[language][5]}
                 alt="Bunsekikun"
                 width={300}
                 height={300}
@@ -267,7 +282,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
             >
               <Image
-                src={buttons[language][5]}
+                src={buttons[language][6]}
                 alt="Portfolio"
                 width={300}
                 height={300}
@@ -281,7 +296,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 mb-0 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
             >
               <Image
-                src={buttons[language][6]}
+                src={buttons[language][7]}
                 alt="Oshikatsu"
                 width={300}
                 height={300}
@@ -295,7 +310,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
             >
               <Image
-                src={buttons[language][7]}
+                src={buttons[language][8]}
                 alt="Cloudis"
                 width={300}
                 height={300}
@@ -309,7 +324,7 @@ function Home() {
               className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
             >
               <Image
-                src={buttons[language][8]}
+                src={buttons[language][9]}
                 alt="Portfolio"
                 width={300}
                 height={300}
