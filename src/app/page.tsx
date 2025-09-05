@@ -207,11 +207,12 @@ function Home() {
               </button>
             </div>
           </div>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
           <a
               href="https://pr.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][1]}
@@ -225,7 +226,7 @@ function Home() {
               href="https://blog.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][2]}
@@ -239,7 +240,7 @@ function Home() {
               href="https://vocalaysia.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-green-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-green-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][3]}
@@ -253,7 +254,7 @@ function Home() {
               href="https://bunsekikun.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][4]}
@@ -267,7 +268,7 @@ function Home() {
               href="https://shutokun.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-110 transition duration-500 ease-in-out flex justify-center items-cente"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][5]}
@@ -280,7 +281,7 @@ function Home() {
               href="https://iot.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][6]}
@@ -294,7 +295,7 @@ function Home() {
               href="https://oshikatsu.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 mb-0 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][7]}
@@ -308,7 +309,7 @@ function Home() {
               href="https://cloudis.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 m-2 mt-4 mb-0 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][8]}
@@ -322,7 +323,7 @@ function Home() {
               href="https://portfolio.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-0 px-0 py-0 mt-4 mb-10 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-110 transition duration-500 ease-in-out flex justify-center items-center"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][9]}
@@ -332,7 +333,8 @@ function Home() {
 
               />
               </a>
-              <div className={`text-xs mb-10 ${resolvedTheme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
+            </div>
+              <div className={`text-xs my-10 ${resolvedTheme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
                 <p>© 2025 Luqman Hadi</p>
                 <p>All rights reserved.</p>
               </div>
