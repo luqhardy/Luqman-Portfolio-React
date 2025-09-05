@@ -240,7 +240,7 @@ function Home() {
               href="https://vocalaysia.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-green-500/100 hover:scale-105 transition duration-300 ease-in-out"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-cyan-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][3]}
