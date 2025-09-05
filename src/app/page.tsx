@@ -207,7 +207,7 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
           <a
               href="https://pr.luqmanhadi.com/"
               target="_blank"
