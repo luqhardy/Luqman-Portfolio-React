@@ -156,7 +156,7 @@ function Home() {
           </button>
         )}
       </div>
-      <div className={`font-noto-sans-jp text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}> 
+      <div className={`font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}> 
           <div >
             {/* <ThreeDObjectClient /> */}
           </div>
