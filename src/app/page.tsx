@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ThreeDObjectClient from "./ThreeDObjectClient";
+//import ThreeDObjectClient from "./ThreeDObjectClient";
 import React, { useState, useEffect } from "react";
 import Icon from '@mdi/react';
 import { mdiLinkedin } from '@mdi/js';
