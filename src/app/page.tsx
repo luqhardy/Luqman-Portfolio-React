@@ -158,7 +158,7 @@ function Home() {
       </div>
       <div className={`font-noto-sans-jp text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}> 
           <div >
-          <ThreeDObjectClient />
+            {/* <ThreeDObjectClient /> */}
           </div>
           <h1>
             <span className="font-bold text-3xl">{content[language].main}</span><br />
