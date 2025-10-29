@@ -157,8 +157,15 @@ function Home() {
         )}
       </div>
       <div className={`font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}> 
-          <div >
+          <div className={'m-10 rounded-4xl shadow-lg hover:shadow-2xl transition-shadow duration-300'}>
             {/* <ThreeDObjectClient /> */}
+            <Image
+                src="/2.jpg"
+                alt="自己PR"
+                width={400}
+                height={400}
+                className="rounded-4xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              />
           </div>
           <h1>
             <span className="font-bold text-3xl">{content[language].main}</span><br />
