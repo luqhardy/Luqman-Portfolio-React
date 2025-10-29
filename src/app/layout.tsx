@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -42,6 +43,7 @@ export default function RootLayout({
     <html lang="ja" className={clsx(notoSansJP.variable, geistSans.variable, geistMono.variable, "font-sans")}> 
       <body className="antialiased" cz-shortcut-listen="true">
         {children}
+        <Analytics />
       </body>
     </html>
   );
