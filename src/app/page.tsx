@@ -113,7 +113,7 @@ function Home() {
       9: "/jp/6.png",
     },
     en: {
-      0: "/jp/0.png",
+      0: "/en/0.png",
       1: "/en/pr.png",
       2: "/en/blog.png",
       3: "/en/voca.png",
@@ -224,7 +224,7 @@ function Home() {
               href="https://garakei.luqmanhadi.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-105 transition duration-300 ease-in-out"
+              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/100 hover:scale-105 transition duration-300 ease-in-out"
             >
               <Image
                 src={buttons[language][0]}
