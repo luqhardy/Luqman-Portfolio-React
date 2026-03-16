@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist+Sans:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -27,5 +27,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), 'Noto Sans JP', 'Geist Sans', Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-sans), "Noto Sans JP", "Geist Sans", Arial, Helvetica, sans-serif;
+}
+
+@keyframes grid-movement {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    /* Seamless infinite diagonal loop (exact grid size multiplier) */
+    transform: translate(-80px, 80px);
+  }
+}
+
+.animate-grid-movement {
+  animation: grid-movement 4s linear infinite; /* Removing 'alternate' to make it infinite scrolling */
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
 }

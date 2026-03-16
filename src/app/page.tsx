@@ -90,12 +90,12 @@ function Home() {
   const content = {
     ja: {
       name: "ルクマン　ハディ",
-      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n 株式会社ワオナス・一般社団法人クラウディス\nパート社員\nマレーシア出身 神戸市在住\nメール: hello@luqmanhadi.com",
+      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n 株式会社ワオナス・一般社団法人クラウディス\nパート社員\n関西大学 JASSO交換留学生 2023-2024\nマレーシア出身 神戸市在住\nメール: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     },
     en: {
       name: "ルクマン　ハディ",
-      subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year\n Wownas Co., Ltd. Freelance Staff\nMalaysian, based in Kobe City, Hyogo Pref, Japan\nContact: hello@luqmanhadi.com",
+      subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year\n Wownas Co., Ltd. Freelance Staff\n Kansai University JASSO Exchange Student 2023-2024\nMalaysian, based in Kobe City, Hyogo Pref, Japan\nContact: hello@luqmanhadi.com",
       main: "Luqman Hadi"
     }
   };
@@ -129,10 +129,19 @@ function Home() {
   return (
     <>
       <Analytics />
-      <div
-        className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'
-          }`}
-      >
+      <div className={`relative overflow-hidden flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+        {/* Shadcn Grid Background */}
+        <div 
+          className="absolute inset-0 z-0 pointer-events-none animate-grid-movement"
+          style={{
+            backgroundSize: '40px 40px',
+            backgroundImage: resolvedTheme === 'dark' 
+              ? 'linear-gradient(to right, rgba(255,255,255,0.15) 2px, transparent 2px), linear-gradient(to bottom, rgba(255,255,255,0.15) 2px, transparent 2px)' 
+              : 'linear-gradient(to right, rgba(0,0,0,0.1) 2px, transparent 2px), linear-gradient(to bottom, rgba(0,0,0,0.1) 2px, transparent 2px)',
+            maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          }}
+        ></div>
+
         {/* Theme Toggle Button */}
         <div className="fixed top-4 right-4 z-50">
           <button
@@ -161,62 +170,66 @@ function Home() {
             </button>
           )}
         </div>
-        <div className={`font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
-          <div className={'m-10 rounded-4xl shadow-lg hover:shadow-2xl transition-shadow duration-300'}>
-            {/* <ThreeDObjectClient /> */}
-            <Image
-              src="/2.jpg"
-              alt="自己PR"
-              width={400}
-              height={400}
-              className="rounded-4xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-            />
-          </div>
-          <h1>
-            <span className="font-bold text-3xl">{content[language].main}</span><br />
-            <span className="font-light text-xl">{content[language].name}</span><br />
-            <ClickableEmailSubtitle text={content[language].subtitle} />
-          </h1>
-          <div className="mt-6 flex justify-center gap-4  mb-5 items-center">
-            <a
-              href="https://linkedin.com/in/luqman-hadi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
-            >
-              <Icon path={mdiLinkedin} size={1} color={resolvedTheme === 'dark' ? 'white' : '#0A66C2'} />
-            </a>
-            <a
-              href="https://github.com/luqhardy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
-            >
-              <Icon path={mdiGithub} size={1} color={resolvedTheme === 'dark' ? 'white' : '#333'} />
-            </a>
-            <a
-              href="mailto:hello@luqmanhadi.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2 rounded font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-gray-900 text-white' : 'hover:bg-gray-200 text-black'}`}
-            >
-              <Icon path={mdiEmail} size={1} color={resolvedTheme === 'dark' ? 'white' : '#EA4335'} />
-            </a>
-            {/* Language Toggle Switch */}
-            <div className="flex items-center gap-1 ml-2">
-              <button
-                onClick={() => setLanguage(language === 'ja' ? 'en' : 'ja')}
-                className="relative w-16 h-8 bg-gray-200 rounded-full flex items-center px-1 transition-colors duration-300 focus:outline-none border border-gray-400"
-                aria-label="Toggle language"
-                type="button"
+        <div className={`relative z-10 font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <div className={`p-8 md:p-12 mb-8 rounded-3xl backdrop-blur-xl shadow-2xl transition-all duration-300 flex flex-col items-center justify-center w-[90%] max-w-3xl ${resolvedTheme === 'dark' ? 'bg-zinc-900/80 border border-white/10' : 'bg-white/90 border border-black/5'}`}>
+            <div className={'mb-8 rounded-[40px] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'}>
+              {/* <ThreeDObjectClient /> */}
+              <Image
+                src="/2.jpg"
+                alt="自己PR"
+                width={200}
+                height={200}
+                className="hover:scale-105 transition-transform duration-500 rounded-[40px]"
+              />
+            </div>
+            <h1>
+              <span className="font-bold text-3xl">{content[language].main}</span><br />
+              <span className="font-light text-xl mt-2 block">{content[language].name}</span>
+              <div className="mt-6 leading-relaxed">
+                <ClickableEmailSubtitle text={content[language].subtitle} />
+              </div>
+            </h1>
+            <div className="mt-8 flex justify-center gap-4 items-center">
+              <a
+                href="https://linkedin.com/in/luqman-hadi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
               >
-                <span className="absolute left-2 text-xl select-none pointer-events-none">🇯🇵</span>
-                <span className="absolute right-2 text-xl select-none pointer-events-none">🇬🇧</span>
-                <span
-                  className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 ${language === 'en' ? 'translate-x-8' : ''}`}
-                  style={{ willChange: 'transform' }}
-                />
-              </button>
+                <Icon path={mdiLinkedin} size={1} color={resolvedTheme === 'dark' ? 'white' : '#0A66C2'} />
+              </a>
+              <a
+                href="https://github.com/luqhardy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
+              >
+                <Icon path={mdiGithub} size={1} color={resolvedTheme === 'dark' ? 'white' : '#333'} />
+              </a>
+              <a
+                href="mailto:hello@luqmanhadi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
+              >
+                <Icon path={mdiEmail} size={1} color={resolvedTheme === 'dark' ? 'white' : '#EA4335'} />
+              </a>
+              {/* Language Toggle Switch */}
+              <div className="flex items-center gap-1 ml-2">
+                <button
+                  onClick={() => setLanguage(language === 'ja' ? 'en' : 'ja')}
+                  className="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center px-1 transition-colors duration-300 focus:outline-none border border-gray-400 dark:border-gray-600"
+                  aria-label="Toggle language"
+                  type="button"
+                >
+                  <span className="absolute left-2 text-xl select-none pointer-events-none">🇯🇵</span>
+                  <span className="absolute right-2 text-xl select-none pointer-events-none">🇬🇧</span>
+                  <span
+                    className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 ${language === 'en' ? 'translate-x-8' : ''}`}
+                    style={{ willChange: 'transform' }}
+                  />
+                </button>
+              </div>
             </div>
           </div>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
