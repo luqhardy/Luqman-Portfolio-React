@@ -17,14 +17,14 @@ function ClickableEmailSubtitle({ text }: { text: string }) {
   const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
   const match = text.match(emailRegex);
   if (!match) {
-    return <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>{text}</span>;
+    return <span className="font-light text-xs leading-snug" style={{ whiteSpace: 'pre-line' }}>{text}</span>;
   }
   const email = match[0];
   const parts = text.split(email);
   const beforeText = parts[0];
   const afterText = parts[1] || '';
   return (
-    <span className="font-light text-sm" style={{ whiteSpace: 'pre-line' }}>
+    <span className="font-light text-xs leading-snug" style={{ whiteSpace: 'pre-line' }}>
       {beforeText}
       <a href={`mailto:${email}`} className="text-blue-400 hover:underline">
         {email}
@@ -128,7 +128,7 @@ function Home() {
 
   return (
     <>
-      <Analytics />
+      <Analytics/>
       <div className={`relative overflow-hidden flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'}`}>
         {/* Shadcn Grid Background */}
         <div 
@@ -172,20 +172,20 @@ function Home() {
         </div>
         <div className={`relative z-10 font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
           <div className={`p-8 md:p-12 mb-8 rounded-3xl backdrop-blur-xs shadow-2xl transition-all duration-300 flex flex-col items-center justify-center w-[90%] max-w-3xl ${resolvedTheme === 'dark' ? 'border border-white/10' : 'border border-black/5'}`}>
-            <div className={'mb-8 rounded-[40px] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'}>
+            <div className={'mb-8 rounded-[20px] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'}>
               {/* <ThreeDObjectClient /> */}
               <Image
                 src="/2.jpg"
                 alt="自己PR"
                 width={200}
                 height={200}
-                className="hover:scale-105 transition-transform duration-500 rounded-[40px]"
+                className="hover:scale-105 transition-transform duration-500 rounded-[10px]"
               />
             </div>
             <h1>
               <span className="font-bold text-3xl">{content[language].main}</span><br />
-              <span className="font-light text-xl mt-2 block">{content[language].name}</span>
-              <div className="mt-4">
+              <span className="font-light text-lg mt-1 block opacity-90">{content[language].name}</span>
+              <div className="mt-3 leading-7">
                 <ClickableEmailSubtitle text={content[language].subtitle} />
               </div>
             </h1>
