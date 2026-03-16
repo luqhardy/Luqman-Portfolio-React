@@ -171,7 +171,7 @@ function Home() {
           )}
         </div>
         <div className={`relative z-10 font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
-          <div className={`p-8 md:p-12 mb-8 rounded-3xl backdrop-blur-xl shadow-2xl transition-all duration-300 flex flex-col items-center justify-center w-[90%] max-w-3xl ${resolvedTheme === 'dark' ? 'bg-zinc-900/80 border border-white/10' : 'bg-white/90 border border-black/5'}`}>
+          <div className={`p-8 md:p-12 mb-8 rounded-3xl backdrop-blur-xs shadow-2xl transition-all duration-300 flex flex-col items-center justify-center w-[90%] max-w-3xl ${resolvedTheme === 'dark' ? 'border border-white/10' : 'border border-black/5'}`}>
             <div className={'mb-8 rounded-[40px] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'}>
               {/* <ThreeDObjectClient /> */}
               <Image
@@ -185,7 +185,7 @@ function Home() {
             <h1>
               <span className="font-bold text-3xl">{content[language].main}</span><br />
               <span className="font-light text-xl mt-2 block">{content[language].name}</span>
-              <div className="mt-6 leading-relaxed">
+              <div className="mt-4">
                 <ClickableEmailSubtitle text={content[language].subtitle} />
               </div>
             </h1>
