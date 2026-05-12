@@ -373,7 +373,7 @@ function Home() {
             </a>
           </div>
           <div className={`text-xs my-10 ${resolvedTheme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
-            <p>© 2025 Luqman Hadi</p>
+            <p>© 2026 Luqman Hadi</p>
             <p>All rights reserved.</p>
           </div>
         </div>
