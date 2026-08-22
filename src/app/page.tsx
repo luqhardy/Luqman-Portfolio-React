@@ -1,385 +1,366 @@
 "use client";
 
 import Image from "next/image";
-//import ThreeDObjectClient from "./ThreeDObjectClient";
-import React, { useState, useEffect } from "react";
-import Icon from '@mdi/react';
-import { mdiLinkedin } from '@mdi/js';
-import { mdiGithub } from '@mdi/js';
-import { mdiEmail } from '@mdi/js';
-import { Analytics } from "@vercel/analytics/react";
-//import LiquidGlass from "liquid-glass-react";
 
+import fuhehe from "@/fuhehe.png";
+import { ArrowUpRight, CircleDot, Mail } from "lucide-react";
 
+import { Section, SectionHeading } from "@/components/section";
+import { CellGrid, ElsewhereCell, ProjectCell } from "@/components/project-cell";
+import { HighlightCell } from "@/components/highlight-cell";
+import { useLanguage } from "@/components/language-provider";
+import {
+  allProjects,
+  elsewhere,
+  featured,
+  profile,
+  projectGroups,
+  ui,
+} from "@/lib/content";
+import {
+  certifications,
+  education,
+  experience,
+  highlights,
+  languages,
+  stack,
+} from "@/lib/resume";
 
-
-function ClickableEmailSubtitle({ text }: { text: string }) {
-  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
-  const match = text.match(emailRegex);
-  if (!match) {
-    return <span className="font-light text-xs leading-snug" style={{ whiteSpace: 'pre-line' }}>{text}</span>;
-  }
-  const email = match[0];
-  const parts = text.split(email);
-  const beforeText = parts[0];
-  const afterText = parts[1] || '';
-  return (
-    <span className="font-light text-xs leading-snug" style={{ whiteSpace: 'pre-line' }}>
-      {beforeText}
-      <a href={`mailto:${email}`} className="text-blue-400 hover:underline">
-        {email}
-      </a>
-      {afterText}
-    </span>
-  );
-}
-
-function Home() {
-  // Theme state: 'system', 'light', 'dark'
-  const [theme, setTheme] = useState<'system' | 'light' | 'dark'>('system');
-  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
-  // Language state
-  const [language, setLanguage] = useState<'ja' | 'en'>('ja');
-
-  // Theme effect: detect system theme and apply override
-  useEffect(() => {
-    // On mount, check localStorage for theme override
-    try {
-      const stored = localStorage.getItem('theme-override');
-      if (stored === 'light' || stored === 'dark') {
-        setTheme(stored);
-      }
-    } catch (_) { /* localStorage not available (SSR/Turbopack) */ }
-  }, []);
-
-  useEffect(() => {
-    // Listen for system theme changes
-    try {
-      const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      const updateTheme = () => {
-        if (theme === 'system') {
-          setResolvedTheme(mq.matches ? 'dark' : 'light');
-        }
-      };
-      mq.addEventListener('change', updateTheme);
-      updateTheme();
-      return () => mq.removeEventListener('change', updateTheme);
-    } catch (_) { /* window not available (SSR/Turbopack) */ }
-  }, [theme]);
-
-  useEffect(() => {
-    // Apply theme override
-    try {
-      if (theme === 'system') {
-        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setResolvedTheme(isDark ? 'dark' : 'light');
-        localStorage.removeItem('theme-override');
-      } else {
-        setResolvedTheme(theme);
-        localStorage.setItem('theme-override', theme);
-      }
-      // Set html class for Tailwind
-      if (resolvedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    } catch (_) { /* window/localStorage/document not available (SSR/Turbopack) */ }
-  }, [theme, resolvedTheme]);
-
-  const content = {
-    ja: {
-      name: "ルクマン　ハディ",
-      subtitle: "文部科学省国費外国人留学生　神戸電子専門学校\nAIシステム開発学科　1年生\n 株式会社ワオナス・一般社団法人クラウディス\nパート社員\n関西大学 JASSO交換留学生 2023-2024\nマレーシア出身 神戸市在住\nメール: hello@luqmanhadi.com",
-      main: "Luqman Hadi"
-    },
-    en: {
-      name: "ルクマン　ハディ",
-      subtitle: "Japanese Government (MEXT) Scholar, Kobe Institute of Computing\nAI Systems Development, 1st Year\n Wownas Co., Ltd. Freelance Staff\n Kansai University JASSO Exchange Student 2023-2024\nMalaysian, based in Kobe City, Hyogo Pref, Japan\nContact: hello@luqmanhadi.com",
-      main: "Luqman Hadi"
-    }
-  };
-  const buttons = {
-    ja: {
-      0: "/jp/0.png",
-      1: "/jp/pr.png",
-      2: "/jp/blog.png",
-      3: "/jp/voca.png",
-      4: "/jp/1.png",
-      5: "/jp/2.png",
-      6: "/jp/3.png",
-      7: "/jp/4.png",
-      8: "/jp/5.png",
-      9: "/jp/6.png",
-    },
-    en: {
-      0: "/en/0.png",
-      1: "/en/pr.png",
-      2: "/en/blog.png",
-      3: "/en/voca.png",
-      4: "/en/1.png",
-      5: "/en/2.png",
-      6: "/en/3.png",
-      7: "/en/4.png",
-      8: "/en/5.png",
-      9: "/en/6.png",
-    },
-  };
+export default function Home() {
+  const { t, lang } = useLanguage();
 
   return (
-    <>
-      <Analytics/>
-      <div className={`relative overflow-hidden flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${resolvedTheme === 'dark' ? 'bg-black' : 'bg-white'}`}>
-        {/* Shadcn Grid Background */}
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none animate-grid-movement"
-          style={{
-            backgroundSize: '40px 40px',
-            backgroundImage: resolvedTheme === 'dark' 
-              ? 'linear-gradient(to right, rgba(255,255,255,0.15) 2px, transparent 2px), linear-gradient(to bottom, rgba(255,255,255,0.15) 2px, transparent 2px)' 
-              : 'linear-gradient(to right, rgba(0,0,0,0.1) 2px, transparent 2px), linear-gradient(to bottom, rgba(0,0,0,0.1) 2px, transparent 2px)',
-            maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
-          }}
-        ></div>
-
-        {/* Theme Toggle Button */}
-        <div className="fixed top-4 right-4 z-50">
-          <button
-            onClick={() => {
-              setTheme(theme === 'system' ? (resolvedTheme === 'dark' ? 'light' : 'dark') : (theme === 'dark' ? 'light' : 'dark'));
-            }}
-            className={`flex items-center gap-2 px-3 py-2 rounded-full shadow-md border transition-colors duration-300 focus:outline-none ${resolvedTheme === 'dark' ? 'bg-gray-800 border-gray-700 text-yellow-200 hover:bg-gray-700' : 'bg-white border-gray-300 text-gray-800 hover:bg-gray-200'}`}
-            aria-label="Toggle light/dark mode"
-            type="button"
-          >
-            {resolvedTheme === 'dark' ? (
-              <span role="img" aria-label="Light mode">🌞</span>
-            ) : (
-              <span role="img" aria-label="Dark mode">🌙</span>
-            )}
-            <span className="text-xs font-semibold">
-              {theme === 'system' ? 'System' : (theme === 'dark' ? 'Dark' : 'Light')}
-            </span>
-          </button>
-          {theme !== 'system' && (
-            <button
-              onClick={() => setTheme('system')}
-              className={`block mt-2 w-full px-3 py-1 rounded-full text-xs border transition-colors duration-300 focus:outline-none ${resolvedTheme === 'dark' ? 'bg-gray-900 border-gray-700 text-gray-300 hover:bg-gray-800' : 'bg-white border-gray-300 text-gray-600 hover:bg-gray-200'}`}
-            >
-              Use System
-            </button>
-          )}
-        </div>
-        <div className={`relative z-10 font-noto-sans-jp mt-10 text-center text-2xl flex flex-col items-center justify-center transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'}`}>
-          <div className={`p-8 md:p-12 mb-8 rounded-3xl backdrop-blur-xs shadow-2xl transition-all duration-300 flex flex-col items-center justify-center w-[90%] max-w-3xl ${resolvedTheme === 'dark' ? 'border border-white/10' : 'border border-black/5'}`}>
-            <div className={'mb-8 rounded-[20px] shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden'}>
-              {/* <ThreeDObjectClient /> */}
-              <Image
-                src="/2.jpg"
-                alt="自己PR"
-                width={200}
-                height={200}
-                className="hover:scale-105 transition-transform duration-500 rounded-[10px]"
-              />
-            </div>
-            <h1>
-              <span className="font-bold text-3xl">{content[language].main}</span><br />
-              <span className="font-light text-lg mt-1 block opacity-90">{content[language].name}</span>
-              <div className="mt-3 leading-7">
-                <ClickableEmailSubtitle text={content[language].subtitle} />
-              </div>
-            </h1>
-            <div className="mt-8 flex justify-center gap-4 items-center">
-              <a
-                href="https://linkedin.com/in/luqman-hadi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
-              >
-                <Icon path={mdiLinkedin} size={1} color={resolvedTheme === 'dark' ? 'white' : '#0A66C2'} />
-              </a>
-              <a
-                href="https://github.com/luqhardy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
-              >
-                <Icon path={mdiGithub} size={1} color={resolvedTheme === 'dark' ? 'white' : '#333'} />
-              </a>
-              <a
-                href="mailto:hello@luqmanhadi.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition ${resolvedTheme === 'dark' ? 'hover:bg-white/10 text-white' : 'hover:bg-black/5 text-black'}`}
-              >
-                <Icon path={mdiEmail} size={1} color={resolvedTheme === 'dark' ? 'white' : '#EA4335'} />
-              </a>
-              {/* Language Toggle Switch */}
-              <div className="flex items-center gap-1 ml-2">
-                <button
-                  onClick={() => setLanguage(language === 'ja' ? 'en' : 'ja')}
-                  className="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center px-1 transition-colors duration-300 focus:outline-none border border-gray-400 dark:border-gray-600"
-                  aria-label="Toggle language"
-                  type="button"
-                >
-                  <span className="absolute left-2 text-xl select-none pointer-events-none">🇯🇵</span>
-                  <span className="absolute right-2 text-xl select-none pointer-events-none">🇬🇧</span>
-                  <span
-                    className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300 ${language === 'en' ? 'translate-x-8' : ''}`}
-                    style={{ willChange: 'transform' }}
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
-            <a
-              href="https://garakei.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/100 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][0]}
-                alt="ガラケイ"
-                width={300}
-                height={300}
-              />
-            </a>
-            <a
-              href="https://pr.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-orange-500/100 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][1]}
-                alt="自己PR"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://blog.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/100 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][2]}
-                alt="Blog"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://vocalaysia.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-cyan-500/100 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][3]}
-                alt="Vocalaysia"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://bunsekikun.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-blue-500/100 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][4]}
-                alt="Shuutokun"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://shutokun.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-white hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][5]}
-                alt="Bunsekikun"
-                width={300}
-                height={300}
-              />
-            </a>
-            <a
-              href="https://iot.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-yellow-500/50 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][6]}
-                alt="Portfolio"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://oshikatsu.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-pink-500/50 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][7]}
-                alt="Oshikatsu"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://cloudis.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][8]}
-                alt="Cloudis"
-                width={300}
-                height={300}
-
-              />
-            </a>
-            <a
-              href="https://portfolio.luqmanhadi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center m-2 rounded-4xl hover:shadow-lg shadow-gray-500/50 hover:scale-105 transition duration-300 ease-in-out"
-            >
-              <Image
-                src={buttons[language][9]}
-                alt="Portfolio"
-                width={300}
-                height={300}
-
-              />
-            </a>
-          </div>
-          <div className={`text-xs my-10 ${resolvedTheme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
-            <p>© 2026 Luqman Hadi</p>
-            <p>All rights reserved.</p>
-          </div>
-        </div>
+    <div id="top" className="mx-auto w-full max-w-4xl pb-4">
+      {/* ---------------------------------------------------------------- */}
+      {/* Open-to-work notice                                              */}
+      {/* ---------------------------------------------------------------- */}
+      <div className="border-b border-primary/25 bg-primary/[0.07] px-4 py-3 sm:px-6">
+        <p className="flex items-start gap-2.5 text-xs leading-relaxed">
+          <CircleDot
+            aria-hidden="true"
+            className="mt-px size-3.5 shrink-0 text-primary"
+          />
+          <span>{t(profile.status)}</span>
+        </p>
       </div>
-    </>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Intro                                                            */}
+      {/* ---------------------------------------------------------------- */}
+      <Section className="relative overflow-hidden pt-10 pb-12">
+        {/* Decorative only. Sits before the content in the DOM so the content,
+            being positioned too, paints over it without needing a z-index. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden aspect-[4/3] max-w-[20rem] select-none sm:block"
+        >
+          <Image
+            src={fuhehe}
+            alt=""
+            sizes="320px"
+            className="hero-art h-full w-full object-contain object-right opacity-50"
+          />
+        </div>
+
+        <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+          <div className="w-28 shrink-0 border sm:w-32">
+            <Image
+              src="/2.jpg"
+              alt={t({
+                en: "Portrait of Luqman Hadi",
+                ja: "ルクマン・ハディの写真",
+              })}
+              width={200}
+              height={200}
+              priority
+              className="aspect-square w-full object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
+            />
+          </div>
+
+          {/* pr reserves the strip the art occupies, so no line of text can
+              ever run under it regardless of viewport or sidebar state. */}
+          <div className="min-w-0 flex-1 sm:pr-40">
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              {profile.fullName}
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {profile.kana} · {profile.pronouns}
+            </p>
+
+            <p className="mt-4 max-w-prose text-sm leading-relaxed">
+              {t(profile.tagline)}
+            </p>
+
+            <a
+              href={`mailto:${profile.email}`}
+              className="mt-4 inline-flex items-center gap-2 border px-2.5 py-1.5 text-xs transition-colors hover:bg-accent"
+            >
+              <Mail className="size-3.5 text-muted-foreground" />
+              {profile.email}
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* About                                                            */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="about" className="py-8">
+        <SectionHeading title={t(ui.about)} />
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+          <div className="max-w-prose space-y-4 text-sm leading-relaxed">
+            {profile.bio[lang].map((paragraph) => (
+              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            ))}
+          </div>
+
+          <dl className="cell-grid h-fit grid-cols-1">
+            {profile.facts.map((fact) => (
+              <div
+                key={fact.label.en}
+                className="cell flex-col items-start gap-1"
+              >
+                <dt className="font-mono text-[0.65rem] tracking-[0.16em] text-muted-foreground uppercase">
+                  {t(fact.label)}
+                </dt>
+                <dd className="text-xs leading-relaxed">{t(fact.value)}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Awards & highlights                                              */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="highlights" className="py-8">
+        <SectionHeading title={t(ui.highlights)} count={highlights.length} />
+        <CellGrid>
+          {highlights.map((item) => (
+            <HighlightCell key={item.id} highlight={item} />
+          ))}
+        </CellGrid>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Selected work                                                    */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="work" className="py-8">
+        <SectionHeading title={t(ui.featured)} count={featured.length} />
+        <CellGrid>
+          {featured.map((project) => (
+            <ProjectCell key={project.id} project={project} featured />
+          ))}
+        </CellGrid>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* All projects, grouped                                            */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="projects" className="py-8">
+        <SectionHeading title={t(ui.allProjects)} count={allProjects.length} />
+        <div className="flex flex-col gap-8">
+          {projectGroups.map((group) => (
+            <div key={group.id}>
+              <SectionHeading
+                as="h3"
+                title={t(group.label)}
+                count={group.projects.length}
+              />
+              <CellGrid className="mt-3">
+                {group.projects.map((project) => (
+                  <ProjectCell key={project.id} project={project} />
+                ))}
+              </CellGrid>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Experience                                                       */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="experience" className="py-8">
+        <SectionHeading title={t(ui.experience)} count={experience.length} />
+        <div className="cell-grid grid-cols-1">
+          {experience.map((entry) => (
+            <article
+              key={entry.id}
+              className="cell flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:gap-6"
+            >
+              <p className="w-full shrink-0 font-mono text-[0.7rem] tabular-nums text-muted-foreground sm:w-40">
+                {entry.period}
+              </p>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm font-medium">{t(entry.org)}</h3>
+                <p className="mt-0.5 text-xs text-foreground/80">
+                  {t(entry.role)}
+                </p>
+                {entry.detail ? (
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                    {t(entry.detail)}
+                  </p>
+                ) : null}
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Education                                                        */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="education" className="py-8">
+        <SectionHeading title={t(ui.education)} count={education.length} />
+        <div className="cell-grid grid-cols-1">
+          {education.map((entry) => (
+            <article
+              key={entry.id}
+              className="cell flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:gap-6"
+            >
+              <p className="w-full shrink-0 font-mono text-[0.7rem] tabular-nums text-muted-foreground sm:w-40">
+                {entry.period}
+              </p>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm font-medium">{t(entry.school)}</h3>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                  {t(entry.detail)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Certifications                                                   */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="certifications" className="py-8">
+        <SectionHeading
+          title={t(ui.certifications)}
+          count={certifications.acquired.length}
+        />
+        <div className="flex flex-col gap-8">
+          <div>
+            <SectionHeading
+              as="h3"
+              title={t(ui.acquired)}
+              count={certifications.acquired.length}
+            />
+            <div className="cell-grid mt-3 grid-cols-1 sm:grid-cols-2">
+              {certifications.acquired.map((cert) => (
+                <div
+                  key={cert.name}
+                  className="cell min-h-0 items-baseline justify-between gap-4 py-2.5"
+                >
+                  <span className="text-xs leading-snug">{cert.name}</span>
+                  <span className="shrink-0 font-mono text-[0.65rem] tabular-nums text-muted-foreground">
+                    {cert.date}
+                  </span>
+                </div>
+              ))}
+              {certifications.acquired.length % 2 === 1 ? (
+                <span aria-hidden="true" className="cell hidden min-h-0 sm:block" />
+              ) : null}
+            </div>
+          </div>
+
+          <div>
+            <SectionHeading
+              as="h3"
+              title={t(ui.inProgress)}
+              count={certifications.inProgress.length}
+            />
+            <div className="mt-3 flex flex-wrap gap-2">
+              {certifications.inProgress.map((cert) => (
+                <span
+                  key={cert.name}
+                  className="border px-2.5 py-1 text-xs text-muted-foreground"
+                >
+                  {cert.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Tech stack + languages                                           */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="stack" className="py-8">
+        <SectionHeading title={t(ui.stack)} />
+        <div className="flex flex-col gap-6">
+          {stack.map((group) => (
+            <div key={group.label.en}>
+              <h3 className="font-mono text-[0.65rem] tracking-[0.16em] text-muted-foreground uppercase">
+                {t(group.label)}
+              </h3>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="border px-2.5 py-1 text-xs">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <div>
+            <h3 className="font-mono text-[0.65rem] tracking-[0.16em] text-muted-foreground uppercase">
+              {t({ en: "Languages", ja: "語学" })}
+            </h3>
+            <div className="cell-grid mt-2 grid-cols-1 sm:grid-cols-3">
+              {languages.map((entry) => (
+                <div
+                  key={entry.name.en}
+                  className="cell min-h-0 flex-col items-start gap-0.5 py-2.5"
+                >
+                  <span className="text-xs font-medium">{t(entry.name)}</span>
+                  <span className="font-mono text-[0.65rem] text-muted-foreground">
+                    {t(entry.level)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Elsewhere                                                        */}
+      {/* ---------------------------------------------------------------- */}
+      <Section id="elsewhere" className="py-8">
+        <SectionHeading title={t(ui.elsewhere)} count={elsewhere.length} />
+        <CellGrid columns={3}>
+          {elsewhere.map((link) => (
+            <ElsewhereCell key={link.id} link={link} />
+          ))}
+        </CellGrid>
+      </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Footer                                                           */}
+      {/* ---------------------------------------------------------------- */}
+      <footer className="mt-8 border-t px-4 py-8 text-xs text-muted-foreground sm:px-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {profile.fullName} · {t(ui.rights)}
+          </p>
+          <p className="flex items-center gap-1.5">
+            {t(ui.builtWith)}
+            <a
+              href="https://github.com/luqhardy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-0.5 underline underline-offset-4 hover:text-foreground"
+            >
+              GitHub
+              <ArrowUpRight className="size-3" />
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }
-
-export default Home;
