@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s — Luqman Hadi",
   },
   description:
-    "Japanese Government (MEXT) Scholar, Kobe Institute of Computing — AI Systems Development. Small, specific tools for the web.",
+    "Japanese Government (MEXT) Scholar, Kobe Institute of Computing — AI Systems Development",
   openGraph: {
     title: "Luqman Hadi ルクマン・ハディ",
     description:
