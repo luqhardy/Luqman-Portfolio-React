@@ -51,15 +51,31 @@ export default function Home() {
         {/* Decorative only. Sits before the content in the DOM so the content,
             being positioned too, paints over it without needing a z-index. */}
         <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 hidden aspect-[4/3] max-w-[20rem] select-none sm:block"
+          // Mobile: the hero is a single column, so the art tucks into the
+          // empty space beside the portrait rather than sitting under the text.
+          // sm+: the layout goes side-by-side and it spans the full height.
+          className="pointer-events-none absolute top-10 right-0 aspect-[4/3] h-32 select-none sm:inset-y-0 sm:top-0 sm:h-auto sm:max-w-[20rem]"
         >
           <Image
+            aria-hidden="true"
             src={fuhehe}
             alt=""
             sizes="320px"
             className="hero-art h-full w-full object-contain object-right opacity-50"
           />
+          {/* Sits on the faded tail of the mask, so it reads as a caption
+              rather than as something printed over the artwork. */}
+          <p className="pointer-events-auto absolute right-0 bottom-0 font-mono text-[0.6rem] whitespace-nowrap text-muted-foreground">
+            {t(ui.artBy)}{" "}
+            <a
+              href={profile.artist.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 hover:text-foreground hover:underline"
+            >
+              {profile.artist.handle}
+            </a>
+          </p>
         </div>
 
         <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">

@@ -227,6 +227,9 @@ export const profile = {
   pronouns: "He/Him",
   email: "hello@luqmanhadi.com",
 
+  /** Illustrator of the hero art, credited in the footer. */
+  artist: { handle: "@fsaturn12", href: "https://x.com/fsaturn12" },
+
   /** The notice bar at the top of the page. */
   status: {
     en: "Open to work — graduating March 2027. Software Engineer, Web Developer, Bridge SE (Japan & Malaysia).",
@@ -305,6 +308,7 @@ export const ui = {
   about: { en: "About", ja: "自己紹介" },
   newTab: { en: "opens in new tab", ja: "新しいタブで開く" },
   rights: { en: "All rights reserved.", ja: "All rights reserved." },
+  artBy: { en: "art by", ja: "イラスト" },
   builtWith: {
     en: "Built with Next.js, Tailwind CSS and shadcn/ui.",
     ja: "Next.js・Tailwind CSS・shadcn/ui で制作。",
