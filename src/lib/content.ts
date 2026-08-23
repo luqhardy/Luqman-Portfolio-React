@@ -249,8 +249,8 @@ export const profile = {
   },
 
   tagline: {
-    en: "AI Systems Development student in Kōbe. Aiming to be an engineer who bridges technology, business and creative work.",
-    ja: "神戸でAIシステムを学ぶ学生。技術とビジネス、クリエイティブを繋ぐエンジニアを目指しています。",
+    en: "AI Systems Development (MEXT Scholarship) student in Kōbe, Japan. Heading toward cloud and infrastructure engineering — AWS SAA and Azure AZ-204 certified, building on Cloudflare Workers at the edge, and running Linux VMs on a Proxmox host I maintain myself. Currently working through LPIC and CCNA.",
+    ja: "文部科学省国費留学生として、神戸でAIシステムを学ぶ学生。AWS SAA・Azure AZ-204を取得し、Cloudflare Workersでのエッジ開発や、自分で運用するProxmoxホスト上でのLinux VM運用に取り組みながら、クラウド／インフラエンジニアを目指しています。現在はLPIC・CCNAを学習中。",
   },
 
   bio: {
