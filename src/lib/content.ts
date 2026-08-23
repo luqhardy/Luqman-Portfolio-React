@@ -5,6 +5,7 @@ import {
   CloudSun,
   Heart,
   Languages,
+  Link2,
   Mail,
   Music4,
   Palette,
@@ -71,6 +72,17 @@ const weather: Project = {
   description: {
     en: "Live weather data from Kōbe, Japan",
     ja: "神戸三宮周辺のリアルタイム気象データ",
+  },
+};
+
+const shortlink: Project = {
+  id: "shortlink",
+  href: "https://s.luqmanhadi.com",
+  icon: Link2,
+  title: { en: "Shortlink", ja: "ショートリンク" },
+  description: {
+    en: "Serverless link shortener on Cloudflare",
+    ja: "Cloudflareで動くサーバーレスなリンク短縮サービス",
   },
 };
 
@@ -169,7 +181,7 @@ export const projectGroups: ProjectGroup[] = [
   {
     id: "hardware",
     label: { en: "Hardware & infrastructure", ja: "ハードウェア・インフラ" },
-    projects: [garakei, weather],
+    projects: [garakei, weather, shortlink],
   },
   {
     id: "research",
@@ -232,8 +244,8 @@ export const profile = {
 
   /** The notice bar at the top of the page. */
   status: {
-    en: "Open to work — graduating March 2027. Software Engineer, Web Developer, Bridge SE (Japan & Malaysia).",
-    ja: "2027年3月卒業予定・就職活動中 — ソフトウェアエンジニア / Web開発 / ブリッジSE（日本・マレーシア）",
+    en: "Job search wrapped up for now — graduating March 2027. Still always glad to connect, so do get in touch.",
+    ja: "2027年3月卒業予定・就職活動は一旦終了 — つながり・ご連絡はいつでも大歓迎です",
   },
 
   tagline: {
@@ -279,8 +291,8 @@ export const profile = {
     {
       label: { en: "Currently", ja: "現在" },
       value: {
-        en: "Syunaz Travel & Tours, Wownas Inc.",
-        ja: "Syunaz Travel & Tours・株式会社ワオナス",
+        en: "Wownas Inc.",
+        ja: "株式会社ワオナス",
       },
     },
     {
