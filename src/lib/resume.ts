@@ -1,4 +1,11 @@
-import { BadgeCheck, Languages, Mic, Presentation, Trophy } from "lucide-react";
+import {
+  BadgeCheck,
+  Languages,
+  Mic,
+  Presentation,
+  Trophy,
+  Users,
+} from "lucide-react";
 
 import type { Bilingual, IconComponent } from "@/lib/content";
 
@@ -81,9 +88,23 @@ export const highlights: Highlight[] = [
       ja: "全編フル日本語・台本なしで登壇",
     },
     detail: {
-      en: "Spoke to 50+ people at the Kobe Institute of Computing programming club LT event, on implementing a Tamagotchi for VRChat users.",
-      ja: "神戸情報大学院大学プロコン部のLT会にて50名以上を前に「【朗報】VRChatter向けのたまごっちを実装してみた件」を発表。",
+      en: "Spoke to 50+ people at the programming club LT event at Kobe Institute of Computing Graduate School (神戸情報大学院大学), on implementing a Tamagotchi for VRChat users, and fielded the live Q&A in Japanese too. Clip on LinkedIn.",
+      ja: "神戸情報大学院大学プロコン部のLT会にて50名以上を前に「【朗報】VRChatter向けのたまごっちを実装してみた件」を発表。質疑応答も日本語で対応。動画はLinkedInにて公開。",
     },
+    href: "https://www.linkedin.com/posts/luqman-hadi_publicspeaking-japaneselanguage-vrchat-activity-7482367009016426496-HKiy",
+  },
+  {
+    id: "open-campus",
+    icon: Users,
+    title: {
+      en: "Open Campus seminar, in Japanese",
+      ja: "オープンキャンパス セミナー登壇",
+    },
+    detail: {
+      en: "Gave a seminar to prospective international students at Kobe Institute of Computing's Open Campus, on student life in Japan and practical Japanese acquisition, answering the live Q&A entirely in Japanese. Three-minute clip on LinkedIn.",
+      ja: "神戸電子専門学校のオープンキャンパスにて、留学希望者向けに日本での留学生活と実践的な日本語習得法についてセミナーを実施。質疑応答もすべて日本語で対応。3分間の動画はLinkedInにて公開。",
+    },
+    href: "https://www.linkedin.com/posts/luqman-hadi_studyinjapan-japaneselanguage-languagelearning-activity-7476561257920110592-rrxb",
   },
   {
     id: "speech",

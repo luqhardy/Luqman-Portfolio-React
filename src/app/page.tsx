@@ -3,10 +3,14 @@
 import Image from "next/image";
 
 import fuhehe from "@/fuhehe.png";
-import { ArrowUpRight, CircleDot, Mail } from "lucide-react";
+import { ArrowUpRight, CircleDot } from "lucide-react";
 
 import { Section, SectionHeading } from "@/components/section";
-import { CellGrid, ElsewhereCell, ProjectCell } from "@/components/project-cell";
+import {
+  CellGrid,
+  ElsewhereCell,
+  ProjectCell,
+} from "@/components/project-cell";
 import { HighlightCell } from "@/components/highlight-cell";
 import { useLanguage } from "@/components/language-provider";
 import {
@@ -106,15 +110,33 @@ export default function Home() {
             <p className="mt-4 max-w-prose text-sm leading-relaxed">
               {t(profile.tagline)}
             </p>
-
-            <a
-              href={`mailto:${profile.email}`}
-              className="mt-4 inline-flex items-center gap-2 border px-2.5 py-1.5 text-xs transition-colors hover:bg-accent"
-            >
-              <Mail className="size-3.5 text-muted-foreground" />
-              {profile.email}
-            </a>
           </div>
+        </div>
+
+        <div className="relative mt-6 flex flex-wrap gap-2 sm:pr-40">
+          {elsewhere.map((link) => {
+            const Icon = link.icon;
+            const isMail = link.href.startsWith("mailto:");
+            return (
+              <a
+                key={link.id}
+                href={link.href}
+                target={isMail ? undefined : "_blank"}
+                rel={isMail ? undefined : "noopener noreferrer"}
+                title={t(link.description)}
+                className="group inline-flex items-center gap-2 border px-2.5 py-1.5 text-xs transition-colors hover:bg-accent"
+              >
+                <Icon
+                  aria-hidden="true"
+                  className="size-3.5 shrink-0 text-muted-foreground transition-transform group-hover:scale-110"
+                />
+                {link.label}
+                {isMail ? null : (
+                  <span className="sr-only">({t(ui.newTab)})</span>
+                )}
+              </a>
+            );
+          })}
         </div>
       </Section>
 
@@ -276,7 +298,10 @@ export default function Home() {
                 </div>
               ))}
               {certifications.acquired.length % 2 === 1 ? (
-                <span aria-hidden="true" className="cell hidden min-h-0 sm:block" />
+                <span
+                  aria-hidden="true"
+                  className="cell hidden min-h-0 sm:block"
+                />
               ) : null}
             </div>
           </div>

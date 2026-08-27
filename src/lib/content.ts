@@ -1,8 +1,10 @@
 import type * as React from "react";
 import {
   Braces,
+  BookOpen,
   BriefcaseBusiness,
   CloudSun,
+  FileText,
   Heart,
   Languages,
   Link2,
@@ -221,6 +223,26 @@ export const elsewhere: ElsewhereLink[] = [
     description: {
       en: "Source for most of the above",
       ja: "上記のソースコード",
+    },
+  },
+  {
+    id: "qiita",
+    href: "https://qiita.com/luqhardy",
+    icon: FileText,
+    label: "Qiita",
+    description: {
+      en: "Technical articles, written in Japanese",
+      ja: "技術記事（日本語）",
+    },
+  },
+  {
+    id: "zenn",
+    href: "https://zenn.dev/luqhardy",
+    icon: BookOpen,
+    label: "Zenn",
+    description: {
+      en: "Longer technical write-ups",
+      ja: "技術記事・本",
     },
   },
   {
