@@ -121,9 +121,10 @@ export const highlights: Highlight[] = [
       ja: "関西大学 交換留学修了式 学生代表スピーチ",
     },
     detail: {
-      en: "Spoke on behalf of 88 students from 50 universities across 19 countries and regions at the autumn 2023 exchange programme closing ceremony.",
-      ja: "2023年秋学期交換留学修了式にて、19の国と地域・50大学・88名を代表してスピーチを担当。",
+      en: "Spoke on behalf of 88 students from 50 universities across 19 countries and regions at the autumn 2023 exchange programme closing ceremony. Named as 修了生代表 in the university's own announcement.",
+      ja: "2023年秋学期交換留学修了式にて、19の国と地域・50大学・88名を代表してスピーチを担当。関西大学の公式ニュースに修了生代表として掲載。",
     },
+    href: "https://www.kansai-u.ac.jp/ja/about/pr/topics/2024/01/post_75757.html",
   },
   {
     id: "fe",
