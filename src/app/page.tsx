@@ -106,6 +106,12 @@ export default function Home() {
             <p className="mt-1 text-sm text-muted-foreground">
               {profile.kana} · {profile.pronouns}
             </p>
+            {/* Full name as it appears on official records. Visible rather
+                than hidden: search engines discount text they cannot see, and
+                recruiters checking documents need it anyway. */}
+            <p className="mt-1.5 font-mono text-[0.65rem] leading-relaxed text-muted-foreground">
+              {profile.legalName} · {profile.legalNameKana}
+            </p>
 
             <p className="mt-4 max-w-prose text-sm leading-relaxed">
               {t(profile.tagline)}

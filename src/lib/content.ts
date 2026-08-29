@@ -257,6 +257,9 @@ export const elsewhere: ElsewhereLink[] = [
 export const profile = {
   name: { en: "Luqman Hadi", ja: "Luqman Hadi" },
   fullName: "Luqman Hadi Suhairi",
+  /** Full name as it appears on official records. */
+  legalName: "Mohamed Luqman Hadi Bin Mohamed Suhairi",
+  legalNameKana: "モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ",
   kana: "ルクマン・ハディ",
   pronouns: "He/Him",
   email: "hello@luqmanhadi.com",
@@ -350,3 +353,20 @@ export const ui = {
   toggleLanguage: { en: "日本語に切り替え", ja: "Switch to English" },
   toggleTheme: { en: "Toggle theme", ja: "テーマ切り替え" },
 } as const;
+
+/**
+ * Every form of the name someone might search for, in both scripts. Fed to
+ * the Person schema's alternateName so search engines treat them as one
+ * person rather than several.
+ */
+export const nameVariants: string[] = [
+  "Mohamed Luqman Hadi Bin Mohamed Suhairi",
+  "MOHAMED LUQMAN HADI BIN MOHAMED SUHAIRI",
+  "Luqman Hadi Suhairi",
+  "Luqman Hadi",
+  "モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ",
+  "モハメド　ルクマン　ハディ　ビン　モハメド　スハイリ",
+  "ルクマン・ハディ",
+  "ルクマン ハディ",
+  "luqhardy",
+];
