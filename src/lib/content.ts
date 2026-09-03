@@ -361,6 +361,7 @@ export const ui = {
   nodeMemory: { en: "Memory", ja: "メモリ" },
   nodeDisk: { en: "Disk", ja: "ディスク" },
   nodeUptime: { en: "Uptime", ja: "稼働時間" },
+  nodeDashboard: { en: "Full dashboard", ja: "ダッシュボードを開く" },
   nodeBlurb: {
     en: "A single Proxmox VE 9 node on an Intel i7-6700 with 16GB of RAM, running four LXC containers across local and LVM storage, reachable over Cloudflare and Tailscale. The dashboard above runs in one of those containers — a small Python service on the standard library alone, polling the Proxmox API. No framework, no database.",
     ja: "Intel Core i7-6700・メモリ16GBの1台構成のProxmox VE 9ノード。local／LVMストレージ上でLXCコンテナを4台稼働させ、CloudflareとTailscale経由で接続しています。上のダッシュボードもそのコンテナの1つで、Pythonの標準ライブラリだけでProxmox APIを取得しています。フレームワークもデータベースも使っていません。",

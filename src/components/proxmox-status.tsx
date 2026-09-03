@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Server } from "lucide-react";
 
 import { useLanguage } from "@/components/language-provider";
 import { ui } from "@/lib/content";
@@ -115,20 +115,13 @@ export function ProxmoxStatus() {
           {t(ui.nodeStatus)}
         </h2>
         <span aria-hidden="true" className="h-px flex-1" />
-        <a
-          href="https://proxmox.luqmanhadi.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-1 font-mono text-[0.65rem] text-muted-foreground hover:text-foreground"
-        >
+        <span className="font-mono text-[0.65rem] text-muted-foreground">
           {loading
             ? t(ui.nodeLoading)
             : online
               ? t(ui.nodeOnline)
               : t(ui.nodeOffline)}
-          <ArrowUpRight className="size-3 opacity-0 transition-opacity group-hover:opacity-100" />
-          <span className="sr-only">({t(ui.newTab)})</span>
-        </a>
+        </span>
       </div>
 
       <div className="cell-grid grid-cols-2 sm:grid-cols-4">
@@ -157,9 +150,28 @@ export function ProxmoxStatus() {
         />
       </div>
 
-      <p className="mt-3 max-w-prose text-xs leading-relaxed text-muted-foreground">
-        {t(ui.nodeBlurb)}
-      </p>
+      <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+        <p className="max-w-prose text-xs leading-relaxed text-muted-foreground">
+          {t(ui.nodeBlurb)}
+        </p>
+        <a
+          href="https://proxmox.luqmanhadi.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex shrink-0 items-center gap-2 self-start border px-2.5 py-1.5 text-xs transition-colors hover:bg-accent"
+        >
+          <Server
+            aria-hidden="true"
+            className="size-3.5 shrink-0 text-muted-foreground transition-transform group-hover:scale-110"
+          />
+          {t(ui.nodeDashboard)}
+          <ArrowUpRight
+            aria-hidden="true"
+            className="size-3 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
+          />
+          <span className="sr-only">({t(ui.newTab)})</span>
+        </a>
+      </div>
     </section>
   );
 }
