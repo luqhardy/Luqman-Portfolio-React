@@ -26,9 +26,11 @@ const SITE_URL = "https://luqmanhadi.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  // Leads with the full name rather than "Luqman Hadi" on its own, which
+  // collides with several unrelated people in search results.
   title: {
-    default: "Luqman Hadi ルクマン・ハディ",
-    template: "%s — Luqman Hadi",
+    default: "Luqman Hadi Suhairi ルクマン・ハディ — AI Systems & Cloud, Kōbe",
+    template: "%s — Luqman Hadi Suhairi",
   },
   description:
     "Mohamed Luqman Hadi Bin Mohamed Suhairi (モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ) — Japanese Government (MEXT) Scholar, Kobe Institute of Computing, AI Systems Development.",
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   // letting search engines split ranking between the two.
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Luqman Hadi ルクマン・ハディ",
+    title: "Luqman Hadi Suhairi ルクマン・ハディ",
     description:
       "Mohamed Luqman Hadi Bin Mohamed Suhairi — small, specific tools for the web, made in Kōbe, Japan.",
     type: "profile",
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luqman Hadi ルクマン・ハディ",
+    title: "Luqman Hadi Suhairi ルクマン・ハディ",
     description:
       "Mohamed Luqman Hadi Bin Mohamed Suhairi — AI Systems Development student in Kōbe, heading toward cloud and infrastructure engineering.",
   },
@@ -74,6 +76,11 @@ const personSchema = {
   alternateName: nameVariants,
   givenName: "Luqman Hadi",
   familyName: "Mohamed Suhairi",
+  disambiguatingDescription:
+    "Malaysian software engineer based in Kōbe, Japan. Japanese Government (MEXT) scholar studying AI Systems Development at Kobe Institute of Computing, AWS and Azure certified, trilingual in Japanese, English and Malay.",
+  description:
+    "AI Systems Development student in Kōbe, Japan, working toward cloud and infrastructure engineering.",
+  birthPlace: { "@type": "Country", name: "Malaysia" },
   url: SITE_URL,
   email: `mailto:${profile.email}`,
   nationality: { "@type": "Country", name: "Malaysia" },

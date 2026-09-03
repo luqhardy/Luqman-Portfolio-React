@@ -12,6 +12,7 @@ import {
   ProjectCell,
 } from "@/components/project-cell";
 import { HighlightCell } from "@/components/highlight-cell";
+import { ProxmoxStatus } from "@/components/proxmox-status";
 import { useLanguage } from "@/components/language-provider";
 import {
   allProjects,
@@ -145,6 +146,11 @@ export default function Home() {
           })}
         </div>
       </Section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Live node status                                                 */}
+      {/* ---------------------------------------------------------------- */}
+      <ProxmoxStatus />
 
       {/* ---------------------------------------------------------------- */}
       {/* About                                                            */}
