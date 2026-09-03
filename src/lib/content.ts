@@ -13,6 +13,7 @@ import {
   Palette,
   PenLine,
   ScanText,
+  Server,
   Smartphone,
   Trophy,
 } from "lucide-react";
@@ -85,6 +86,17 @@ const shortlink: Project = {
   description: {
     en: "Serverless link shortener on Cloudflare",
     ja: "Cloudflareで動くサーバーレスなリンク短縮サービス",
+  },
+};
+
+const proxmox: Project = {
+  id: "proxmox",
+  href: "https://proxmox.luqmanhadi.com",
+  icon: Server,
+  title: { en: "Proxmox Dashboard", ja: "Proxmox ダッシュボード" },
+  description: {
+    en: "Live stats from the Proxmox node I run",
+    ja: "自分で運用するProxmoxノードのライブ稼働状況",
   },
 };
 
@@ -183,7 +195,7 @@ export const projectGroups: ProjectGroup[] = [
   {
     id: "hardware",
     label: { en: "Hardware & infrastructure", ja: "ハードウェア・インフラ" },
-    projects: [garakei, weather, shortlink],
+    projects: [garakei, weather, shortlink, proxmox],
   },
   {
     id: "research",
