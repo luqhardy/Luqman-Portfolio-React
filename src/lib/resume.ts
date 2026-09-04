@@ -129,6 +129,13 @@ export const highlights: Highlight[] = [
   {
     id: "fe",
     icon: BadgeCheck,
+    photo: {
+      src: "/highlights/fe-textbook.webp",
+      alt: {
+        en: "The 科目B study guide used to prepare for the FE examination",
+        ja: "基本情報技術者試験 科目Bの参考書",
+      },
+    },
     title: {
       en: "Passed the Japanese FE examination",
       ja: "基本情報技術者試験（FE）合格",
