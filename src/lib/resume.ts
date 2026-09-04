@@ -83,6 +83,13 @@ export const highlights: Highlight[] = [
   {
     id: "lt",
     icon: Presentation,
+    photo: {
+      src: "/highlights/lt-talk.webp",
+      alt: {
+        en: "Luqman presenting at the programming club lightning talk event",
+        ja: "プロコン部のLT会で登壇するルクマン",
+      },
+    },
     title: {
       en: "Unscripted talk, entirely in Japanese",
       ja: "全編フル日本語・台本なしで登壇",
@@ -96,6 +103,13 @@ export const highlights: Highlight[] = [
   {
     id: "open-campus",
     icon: Users,
+    photo: {
+      src: "/highlights/open-campus.webp",
+      alt: {
+        en: "Luqman speaking at the Open Campus seminar for prospective international students",
+        ja: "オープンキャンパスの留学希望者向けセミナーで登壇するルクマン",
+      },
+    },
     title: {
       en: "Open Campus seminar, in Japanese",
       ja: "オープンキャンパス セミナー登壇",
