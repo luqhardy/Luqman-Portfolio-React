@@ -328,9 +328,15 @@ export default function Home() {
               {certifications.inProgress.map((cert) => (
                 <span
                   key={cert.name}
-                  className="border px-2.5 py-1 text-xs text-muted-foreground"
+                  className="inline-flex items-center gap-2 border px-2.5 py-1 text-xs text-muted-foreground"
                 >
                   {cert.name}
+                  {/* For these, `date` is the target rather than an award date. */}
+                  {cert.date ? (
+                    <span className="font-mono text-[0.6rem] tabular-nums opacity-70">
+                      {cert.date}
+                    </span>
+                  ) : null}
                 </span>
               ))}
             </div>

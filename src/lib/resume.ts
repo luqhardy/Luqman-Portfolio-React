@@ -361,6 +361,8 @@ export const certifications: {
   inProgress: Certification[];
 } = {
   acquired: [
+    { name: "AWS Data Streaming Demonstrated", date: "2026.09" },
+    { name: "AWS Data Lakehouse Demonstrated", date: "2026.09" },
     { name: "AWS Academy Graduate — Cloud Security Foundations", date: "2026.07" },
     { name: "AWS Academy Graduate — Cloud Architecting", date: "2026.07" },
     { name: "AWS Academy Graduate — Cloud Foundations", date: "2026.07" },
@@ -388,9 +390,11 @@ export const certifications: {
     { name: "日本語能力試験 N1 (JLPT N1)", date: "2023.07" },
   ],
   inProgress: [
-    { name: "LPIC" },
-    { name: "CCNA" },
-    { name: "Oracle Master Silver" },
+    { name: "BJT ビジネス日本語能力テスト J1+", date: "2026 H2" },
+    { name: "HashiCorp Terraform Associate", date: "2026 H2" },
+    { name: "CKA — Certified Kubernetes Administrator", date: "2027 H1" },
+    { name: "応用情報技術者試験 (AP) / IPA", date: "2027 H1" },
+    { name: "Google Cloud Associate Cloud Engineer", date: "2027 H1" },
   ],
 };
 
