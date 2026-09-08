@@ -1,4 +1,5 @@
 import {
+  Award,
   BadgeCheck,
   Languages,
   Mic,
@@ -41,6 +42,26 @@ export const highlights: Highlight[] = [
       ja: "全国300名以上の大学生の応募の中から、Next.js / React / TypeScript / Tailwind / Firebase で制作したリアルタイム・マルチプレイヤークイズアプリ『ナノメーター』が最優秀賞に選出されました。",
     },
     href: "https://nanometer.luqmanhadi.com",
+  },
+  {
+    id: "mext",
+    icon: Award,
+    photo: {
+      src: "/highlights/mext-scholarship.webp",
+      alt: {
+        en: "Luqman holding his scholarship certificate at the 2024 MEXT scholars send-off ceremony",
+        ja: "2024年度国費留学生壮行会で奨学金証書を持つルクマン",
+      },
+    },
+    title: {
+      en: "Selected for the MEXT Scholarship (STC)",
+      ja: "文部科学省国費留学生（専修学校専門課程）選出",
+    },
+    detail: {
+      en: "One of five chosen for the Specialized Training College track from around 300 applicants. The Embassy of Japan records 38 Malaysians receiving the 2024 Japanese Government (MEXT) Scholarship, sent off at a ceremony hosted by JAGAM in March 2024.",
+      ja: "約300名の応募者から専修学校専門課程枠5名の一人として選出。在マレーシア日本国大使館によると、2024年度日本政府（文部科学省）奨学金を受給したマレーシア人は38名。2024年3月、JAGAM主催の壮行会にて。",
+    },
+    href: "https://www.my.emb-japan.go.jp/itpr_en/newinfo_26032024.html",
   },
   {
     id: "expo-selangor",
