@@ -381,8 +381,6 @@ export const certifications: {
     },
     { name: "基本情報技術者試験 科目A 合格 / IPA", date: "2025.12" },
     { name: "AWS Certified Cloud Practitioner (CCP)", date: "2025.11" },
-    { name: "Notion Academy — Advanced", date: "2025.09" },
-    { name: "Canva Essentials", date: "2025.09" },
     { name: "TOEIC L&R 985", date: "2025.07" },
     { name: "IPA ITパスポート試験", date: "2025.06" },
     { name: "Adobe Certified Professional (Photoshop)", date: "2025.06" },
