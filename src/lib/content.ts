@@ -354,7 +354,10 @@ export const ui = {
   inProgress: { en: "In progress", ja: "学習中" },
   stack: { en: "Tech stack", ja: "技術スタック" },
   elsewhere: { en: "Elsewhere", ja: "ほかの場所" },
-  nodeStatus: { en: "Home node", ja: "自宅サーバー" },
+  nodeStatus: {
+    en: "Home Node (Luqman Web Services)",
+    ja: "自宅サーバー（Luqman Web Services）",
+  },
   nodeOnline: { en: "live", ja: "稼働中" },
   nodeOffline: { en: "unreachable", ja: "接続不可" },
   nodeLoading: { en: "checking…", ja: "確認中…" },
@@ -363,8 +366,8 @@ export const ui = {
   nodeUptime: { en: "Uptime", ja: "稼働時間" },
   nodeDashboard: { en: "Full dashboard", ja: "ダッシュボードを開く" },
   nodeBlurb: {
-    en: "A single Proxmox VE 9 node on an Intel i7-6700 with 16GB of RAM, running four LXC containers across local and LVM storage, reachable over Cloudflare and Tailscale. The dashboard above runs in one of those containers — a small Python service on the standard library alone, polling the Proxmox API. No framework, no database.",
-    ja: "Intel Core i7-6700・メモリ16GBの1台構成のProxmox VE 9ノード。local／LVMストレージ上でLXCコンテナを4台稼働させ、CloudflareとTailscale経由で接続しています。上のダッシュボードもそのコンテナの1つで、Pythonの標準ライブラリだけでProxmox APIを取得しています。フレームワークもデータベースも使っていません。",
+    en: "Proxmox VE on a second-hand Dell OptiPlex 3040 — an i7-6700 with 16GB of RAM. A three-node kubeadm Kubernetes cluster for CKA practice, OpenTofu provisioning VMs as code against the Proxmox API, and Pi-hole, Jupyter and a Cloudflare tunnel each in their own LXC container. The dashboard above runs there too: a small Python service on the standard library alone. No framework, no database.",
+    ja: "中古のDell OptiPlex 3040（Intel Core i7-6700・メモリ16GB）1台で動かしているProxmox VE。CKA対策用のkubeadm 3ノードKubernetesクラスタ、Proxmox APIに対してVMをコードで払い出すOpenTofu、そしてPi-hole・Jupyter・Cloudflare Tunnelをそれぞれ独立したLXCコンテナで運用しています。上のダッシュボードも同じホスト上で動作し、Pythonの標準ライブラリだけで書かれています。フレームワークもデータベースも使っていません。",
   },
   about: { en: "About", ja: "自己紹介" },
   newTab: { en: "opens in new tab", ja: "新しいタブで開く" },
