@@ -354,14 +354,14 @@ export const education: EducationEntry[] = [
   },
   {
     id: "iium",
-    period: "2022.10 — 2026.10",
+    period: "2022.10 — 2024.04",
     school: {
       en: "International Islamic University Malaysia",
       ja: "マレーシア国際イスラム大学（IIUM）",
     },
     detail: {
-      en: "Bachelor of Information Technology (ICT), KICT.",
-      ja: "情報通信技術学部（KICT）／Bachelor of Information Technology",
+      en: "Bachelor of Information Technology (ICT), KICT. Withdrew in April 2024 to take up the MEXT scholarship in Japan.",
+      ja: "情報通信技術学部（KICT）／Bachelor of Information Technology。2024年4月、文部科学省国費留学生として日本へ進学するため中退。",
     },
   },
   {
