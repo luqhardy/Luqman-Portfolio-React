@@ -6,7 +6,7 @@ import { ArrowUpRight, Layers } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Metric } from "@/components/proxmox-status";
 import { ui } from "@/lib/content";
-import type { AnkiStats } from "@/app/api/anki/route";
+import type { AnkiStats } from "@/lib/anki";
 
 const POLL_MS = 60_000;
 const WEEKS = 53;
