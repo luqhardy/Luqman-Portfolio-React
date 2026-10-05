@@ -13,6 +13,7 @@ import {
 } from "@/components/project-cell";
 import { HighlightCell } from "@/components/highlight-cell";
 import { ProxmoxStatus } from "@/components/proxmox-status";
+import { AnkiStatsPanel } from "@/components/anki-stats";
 import { useLanguage } from "@/components/language-provider";
 import {
   allProjects,
@@ -151,6 +152,7 @@ export default function Home() {
       {/* Live node status                                                 */}
       {/* ---------------------------------------------------------------- */}
       <ProxmoxStatus />
+      <AnkiStatsPanel />
 
       {/* ---------------------------------------------------------------- */}
       {/* About                                                            */}

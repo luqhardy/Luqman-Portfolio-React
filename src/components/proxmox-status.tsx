@@ -24,21 +24,30 @@ function formatUptime(seconds: number, lang: "ja" | "en") {
 }
 
 /** One reading: tiny caps label, the value, and a hairline fill bar. */
-function Metric({
+export function Metric({
   label,
   value,
   percent,
+  note,
 }: {
   label: string;
   value: string;
   percent?: number;
+  note?: string;
 }) {
   return (
     <div className="cell min-h-0 flex-col items-start gap-1 py-2.5">
       <span className="font-mono text-[0.6rem] tracking-[0.16em] text-muted-foreground uppercase">
         {label}
       </span>
-      <span className="font-mono text-sm tabular-nums">{value}</span>
+      <span className="font-mono text-sm tabular-nums">
+        {value}
+        {note ? (
+          <span className="ml-1.5 text-[0.65rem] text-muted-foreground">
+            {note}
+          </span>
+        ) : null}
+      </span>
       {typeof percent === "number" ? (
         <span
           aria-hidden="true"
