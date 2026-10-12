@@ -382,6 +382,7 @@ export const certifications: {
   inProgress: Certification[];
 } = {
   acquired: [
+    { name: "BJT ビジネス日本語能力テスト J1 (540)", date: "2026.10" },
     { name: "AWS Data Streaming Demonstrated", date: "2026.09" },
     { name: "AWS Data Lakehouse Demonstrated", date: "2026.09" },
     { name: "AWS Academy Graduate — Cloud Security Foundations", date: "2026.07" },
@@ -405,7 +406,6 @@ export const certifications: {
     { name: "TOEIC L&R 985", date: "2025.07" },
     { name: "IPA ITパスポート試験", date: "2025.06" },
     { name: "Adobe Certified Professional (Photoshop)", date: "2025.06" },
-    { name: "BJT ビジネス日本語能力テスト J2", date: "2025.04" },
     { name: "日本語能力試験 N1 (JLPT N1)", date: "2023.07" },
   ],
   inProgress: [
@@ -476,7 +476,7 @@ export const stack: { label: Bilingual; items: string[] }[] = [
 export const languages: { name: Bilingual; level: Bilingual }[] = [
   {
     name: { en: "Japanese", ja: "日本語" },
-    level: { en: "JLPT N1 · BJT J2", ja: "JLPT N1・BJT J2" },
+    level: { en: "JLPT N1 · BJT J1", ja: "JLPT N1・BJT J1" },
   },
   {
     name: { en: "English", ja: "英語" },

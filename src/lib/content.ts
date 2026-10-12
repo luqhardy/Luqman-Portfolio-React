@@ -293,12 +293,12 @@ export const profile = {
   bio: {
     en: [
       "I'm Luqman Hadi Suhairi, an AI Systems Development student at Kobe Institute of Computing on a Japanese Government (MEXT) scholarship, graduating in March 2027. I started at International Islamic University Malaysia (IIUM, Kulliyyah of ICT), self-studied Japanese to JLPT N1, spent an exchange year at Kansai University as a JASSO scholar, and have continued studying in Japan since.",
-      "Trilingual in Japanese (JLPT N1, BJT J2), English (TOEIC 985) and Malay (native). I've worked as an interpreter at Wownas Inc. and at Expo 2025 Osaka, and completed engineering internships at Kobe Digital Labo and NANO CONNECT Inc.",
+      "Trilingual in Japanese (JLPT N1, BJT J1), English (TOEIC 985) and Malay (native). I've worked as an interpreter at Wownas Inc. and at Expo 2025 Osaka, and completed engineering internships at Kobe Digital Labo and NANO CONNECT Inc.",
       "I hold the Japanese FE certification, AWS Certified Solutions Architect – Associate and Microsoft Certified: Azure Developer Associate (AZ-204). I'm currently working toward HashiCorp Terraform Associate and the CKA, with 応用情報技術者試験 and Google Cloud Associate Cloud Engineer after that.",
     ],
     ja: [
       "はじめまして、ルクマンです。文部科学省国費留学生として神戸電子専門学校（Kobe Institute of Computing）AIシステム開発学科に在籍し、2027年3月卒業予定です。マレーシア国際イスラム大学（IIUM・情報通信技術学部）在学中に独学でJLPT N1を取得し、JASSO奨学生として関西大学へ交換留学、その後MEXT奨学生として日本での学びを続けています。",
-      "日本語（JLPT N1 / BJT J2）・英語（TOEIC 985）・マレー語（ネイティブ）のトリリンガルとして、株式会社ワオナスでの通訳・採用支援、大阪・関西万博での日英通訳、神戸デジタル・ラボおよび株式会社ナノコネクトでの開発インターンシップを経験しました。",
+      "日本語（JLPT N1 / BJT J1）・英語（TOEIC 985）・マレー語（ネイティブ）のトリリンガルとして、株式会社ワオナスでの通訳・採用支援、大阪・関西万博での日英通訳、神戸デジタル・ラボおよび株式会社ナノコネクトでの開発インターンシップを経験しました。",
       "基本情報技術者試験（FE）、AWS Certified Solutions Architect – Associate、Microsoft Certified: Azure Developer Associate (AZ-204) などを取得済みで、現在はHashiCorp Terraform AssociateとCKAに向けて学習中で、その後は応用情報技術者試験とGoogle Cloud Associate Cloud Engineerを予定しています。",
     ],
   },
@@ -321,8 +321,8 @@ export const profile = {
     {
       label: { en: "Languages", ja: "語学" },
       value: {
-        en: "Japanese JLPT N1 / BJT J2 · English TOEIC 985 · Malay native",
-        ja: "日本語 JLPT N1・BJT J2／英語 TOEIC 985／マレー語 ネイティブ",
+        en: "Japanese JLPT N1 / BJT J1 · English TOEIC 985 · Malay native",
+        ja: "日本語 JLPT N1・BJT J1／英語 TOEIC 985／マレー語 ネイティブ",
       },
     },
     {
