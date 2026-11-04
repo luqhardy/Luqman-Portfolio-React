@@ -382,6 +382,7 @@ export const certifications: {
   inProgress: Certification[];
 } = {
   acquired: [
+    { name: "応用情報技術者試験 科目A 合格 / IPA", date: "2026.10" },
     { name: "BJT ビジネス日本語能力テスト J1 (540)", date: "2026.10" },
     { name: "AWS Data Streaming Demonstrated", date: "2026.09" },
     { name: "AWS Data Lakehouse Demonstrated", date: "2026.09" },

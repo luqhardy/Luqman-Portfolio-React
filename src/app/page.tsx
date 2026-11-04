@@ -85,17 +85,17 @@ export default function Home() {
         </div>
 
         <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
-          <div className="w-28 shrink-0 border sm:w-32">
+          <div className="w-40 shrink-0 border sm:w-48">
             <Image
               src="/2.jpg"
               alt={t({
                 en: "Portrait of Luqman Hadi",
                 ja: "ルクマン・ハディの写真",
               })}
-              width={200}
-              height={200}
+              width={384}
+              height={384}
               priority
-              className="aspect-square w-full object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
+              className="aspect-square w-full object-cover"
             />
           </div>
 
