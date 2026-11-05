@@ -1,0 +1,9 @@
+/*
+  Loaded in the browser, not through next/font. Its Google Fonts loader crashes
+  the build when a font URL has no file extension, which fails deploys at random.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --font-noto-sans-jp: "Noto Sans JP";
+}

@@ -1,5 +1,7 @@
+// First, so its CSS @import stays at the top of the stylesheet, where browsers honour it.
+import "./noto-sans-jp.css";
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Noto_Sans_JP } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { LanguageProvider } from "@/components/language-provider";
@@ -12,13 +14,6 @@ import "./globals.css";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  variable: "--font-noto-sans-jp",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -147,7 +142,7 @@ export default function RootLayout({
     <html
       lang="ja"
       suppressHydrationWarning
-      className={`${geistMono.variable} ${notoSansJP.variable}`}
+      className={`${geistMono.variable}`}
     >
       <body className="antialiased">
         <script
