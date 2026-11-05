@@ -14,6 +14,7 @@ import {
 import { HighlightCell } from "@/components/highlight-cell";
 import { ProxmoxStatus } from "@/components/proxmox-status";
 import { AnkiStatsPanel } from "@/components/anki-stats";
+import { JapaneseTeaser } from "@/components/japanese/teaser";
 import { useLanguage } from "@/components/language-provider";
 import {
   allProjects,
@@ -153,6 +154,7 @@ export default function Home() {
       {/* ---------------------------------------------------------------- */}
       <ProxmoxStatus />
       <AnkiStatsPanel />
+      <JapaneseTeaser />
 
       {/* ---------------------------------------------------------------- */}
       {/* About                                                            */}

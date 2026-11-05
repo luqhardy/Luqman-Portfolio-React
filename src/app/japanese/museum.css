@@ -1,0 +1,10 @@
+/* Chart hues validated for colour vision deficiency, light and dark. */
+.museum {
+  --chart-1: #b23a1f;
+  --chart-3: #1c6e9c;
+}
+
+.dark .museum {
+  --chart-1: #e0623f;
+  --chart-3: #3f97cc;
+}
