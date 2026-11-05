@@ -127,6 +127,7 @@ export const clips: {
   wide?: boolean;
 }[] = [
   { id: "highlight", date: "2026.10", length: "1:27", title: { ja: "留学生が5社から内定をもらうまで", en: "How I got 5 job offers in Japan" }, note: { ja: "神戸電子 オープンキャンパス講演のハイライト", en: "Highlights of the Kobe Denshi Open Campus talk" } },
+  { id: "full-talk", date: "2026.10", length: "10:59", title: { ja: "留学生が5社から内定をもらうまで（全編）", en: "Full talk: 5 job offers in Japan" }, note: { ja: "フェンリルを選んだ理由まで。質問者の音声は消しています", en: "Including why I chose Fenrir. The audience question is muted" } },
   { id: "clip-final-round", date: "2026.10", length: "0:42", title: { ja: "最終面接で落ちた話と、5社の内定", en: "Rejected in the final round, then 5 offers" }, note: { ja: "講演より", en: "From the talk" } },
   { id: "clip-one-of-300", date: "2026.10", length: "0:18", title: { ja: "日本人300人の中の留学生1人", en: "One international student among 300" }, note: { ja: "講演より", en: "From the talk" } },
   { id: "clip-sabetsuka", date: "2026.10", length: "0:48", title: { ja: "覚えてほしい言葉「差別化」", en: "One word to remember: 差別化" }, note: { ja: "質疑応答より", en: "From the Q&A" } },
