@@ -8,11 +8,11 @@ const description =
 export const metadata: Metadata = {
   title: "日本語博物館",
   description,
-  alternates: { canonical: "/japanese" },
+  alternates: { canonical: "https://jp.luqmanhadi.com" },
   openGraph: {
     title: "日本語博物館 — Luqman Hadi",
     description,
-    url: "/japanese",
+    url: "https://jp.luqmanhadi.com",
   },
 };
 
