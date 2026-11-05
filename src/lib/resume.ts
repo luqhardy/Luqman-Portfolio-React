@@ -226,8 +226,8 @@ export const experience: ExperienceEntry[] = [
       ja: "大阪・関西万博 日英通訳／展示運営サポート",
     },
     detail: {
-      en: "Official interpreter for the Selangor state delegation to the Expo, and for Linearity at its own exhibit.",
-      ja: "万博におけるセランゴール州代表団の公式通訳、および同社出展ブースでの通訳を担当。",
+      en: "Interpreting and exhibition support on Linearity's linear motor elevator stand at the Expo.",
+      ja: "万博の同社「リニアモーター・エレベータ」出展ブースにて通訳・運営サポートを担当。",
     },
   },
   {
@@ -241,6 +241,19 @@ export const experience: ExperienceEntry[] = [
     detail: {
       en: "Built Nanometer, a real-time quiz app, with Next.js, React and Firebase.",
       ja: "Next.js / React / Firebaseでリアルタイムクイズアプリ「ナノメーター」を開発。",
+    },
+  },
+  {
+    id: "expo-selangor",
+    period: "2025.05",
+    org: { en: "Selangor state delegation", ja: "セランゴール州代表団" },
+    role: {
+      en: "Expo 2025 Osaka — official interpreter, Malaysia Pavilion",
+      ja: "大阪・関西万博 マレーシアパビリオン 公式通訳",
+    },
+    detail: {
+      en: "Official interpreter for the Selangor state delegation at the Malaysia Pavilion, working between Japanese, English and Malay.",
+      ja: "マレーシアパビリオンにてセランゴール州代表団の公式通訳を担当。日本語・英語・マレー語間で対応。",
     },
   },
   {
