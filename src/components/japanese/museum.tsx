@@ -24,6 +24,7 @@ import {
 import log from "@/data/japanese-log.json";
 import type { Bilingual } from "@/lib/content";
 import {
+  clips,
   anki,
   BJT_TARGET,
   fixes,
@@ -110,12 +111,14 @@ function SpeechVideo({
   date,
   title,
   note,
+  wide = false,
 }: {
   src: string;
   poster: string;
   date: string;
   title: string;
   note: string;
+  wide?: boolean;
 }) {
   return (
     <figure className="min-w-0">
@@ -124,7 +127,7 @@ function SpeechVideo({
         playsInline
         preload="none"
         poster={poster}
-        className="aspect-[4/5] w-full bg-muted"
+        className={cn("aspect-[4/5] w-full bg-muted", wide && "object-contain")}
       >
         <source src={src} type="video/mp4" />
       </video>
@@ -272,9 +275,33 @@ export function JapaneseMuseum() {
           </div>
         </Room>
 
-        {/* Speech trend */}
+        {/* Gallery */}
         <Room
           number="02"
+          title={{ ja: "話しているところ", en: "Hear me speak" }}
+          lead={{
+            ja: "発表と質疑応答の動画です。短い動画は講演から切り出して字幕を付けました。",
+            en: "Talks and live Q&A. The short clips are cut from the talk and subtitled.",
+          }}
+        >
+          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3">
+            {clips.map((clip) => (
+              <SpeechVideo
+                key={clip.id}
+                src={`/japanese/gallery/${clip.id}.mp4`}
+                poster={`/japanese/gallery/${clip.id}.webp`}
+                date={`${clip.date} · ${clip.length}`}
+                title={t(clip.title)}
+                note={t(clip.note)}
+                wide={clip.wide}
+              />
+            ))}
+          </div>
+        </Room>
+
+        {/* Speech trend */}
+        <Room
+          number="03"
           title={{ ja: "話す速さは、確かに上がった", en: "The speed really did go up" }}
           lead={{
             ja: "2024年の4.98モーラ/秒から、2026年10月の質疑応答では6.12へ。同じ教室の日本人教員1名（6.69）の91%です。文法や発音の点数ではなく、速さだけの測定です。",
@@ -292,7 +319,7 @@ export function JapaneseMuseum() {
         </Room>
 
         {/* Exams */}
-        <Room number="03" title={{ ja: "試験の点数", en: "Exam scores" }}>
+        <Room number="04" title={{ ja: "試験の点数", en: "Exam scores" }}>
           <div className="grid gap-8 sm:grid-cols-[1fr_12rem]">
             <div>
               <h3 className="mb-3 text-sm font-semibold">BJT</h3>
@@ -314,7 +341,7 @@ export function JapaneseMuseum() {
 
         {/* Anki */}
         <Room
-          number="04"
+          number="05"
           title={{ ja: "Ankiの地層", en: "The Anki strata" }}
           lead={{
             ja: "最盛期は2022年3月の25,385回。今は毎日の修行をやめ、試験の前に集中して使っています。それでも、2年以上空けたカードの93.6%を覚えていました。",
@@ -352,7 +379,7 @@ export function JapaneseMuseum() {
         <AnkiStatsPanel />
 
         {/* Timeline */}
-        <Room number="05" title={{ ja: "年表", en: "Timeline" }}>
+        <Room number="06" title={{ ja: "年表", en: "Timeline" }}>
           <ol className="border-l">
             {timeline.map((event, i) => (
               <li
@@ -383,7 +410,7 @@ export function JapaneseMuseum() {
 
         {/* Exhibits */}
         <Room
-          number="06"
+          number="07"
           title={{ ja: "現場の記録", en: "From the field" }}
           lead={{
             ja: "通訳の現場と、人前で話した記録。使っている言語は四つです。",
@@ -437,7 +464,7 @@ export function JapaneseMuseum() {
 
         {/* Goal */}
         <Room
-          number="07"
+          number="08"
           title={{ ja: "社会人ネイティブへの残り", en: "What's left before April" }}
           lead={{
             ja: "2027年4月までの宿題です。測れていないものは、測れていないと書いておきます。",
@@ -492,7 +519,7 @@ export function JapaneseMuseum() {
         </Room>
 
         {/* Log */}
-        <Room number="08" title={{ ja: "最新の記録", en: "Latest entries" }}>
+        <Room number="09" title={{ ja: "最新の記録", en: "Latest entries" }}>
           <ul>
             {entries.map((entry) => (
               <li key={`${entry.date}-${entry.en}`} className="flex gap-3 border-b py-2.5 text-sm">
@@ -507,7 +534,7 @@ export function JapaneseMuseum() {
         </Room>
 
         {/* Method */}
-        <Room number="09" title={{ ja: "測り方", en: "How this was measured" }}>
+        <Room number="10" title={{ ja: "測り方", en: "How this was measured" }}>
           <ul className="grid max-w-2xl list-disc gap-2 pl-4 text-sm leading-relaxed text-muted-foreground">
             <li>
               {t({

@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { useLanguage } from "@/components/language-provider";
 import { Section, SectionHeading } from "@/components/section";
-import { anki, bjt, speechSamples, teacher } from "@/lib/japanese";
+import { anki, bjt, clips, speechSamples, teacher } from "@/lib/japanese";
 import type { Bilingual } from "@/lib/content";
 
 const photos: { src: string; caption: Bilingual }[] = [
@@ -62,28 +62,20 @@ export function JapaneseTeaser() {
     <Section id="japanese" className="py-8">
       <SectionHeading title={t({ ja: "日本語", en: "Japanese" })} />
       <Link
-        href="/japanese"
+        href="https://jp.luqmanhadi.com"
         className="group block border bg-card p-4 hover:border-primary"
       >
-        <span className="flex items-start justify-between gap-4">
-          <span>
-            <span className="block text-sm font-semibold">
-              {t({
-                ja: "日本語博物館：五年間の記録",
-                en: "The Japanese museum: five years on display",
-              })}
-            </span>
-            <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-              {t({
-                ja: "スピーチの聞き比べ、試験、Anki、年表を公開しています。",
-                en: "Compare the speeches, and see the exams, Anki and the timeline.",
-              })}
-            </span>
-          </span>
-          <ArrowUpRight
-            aria-hidden="true"
-            className="size-4 shrink-0 text-muted-foreground group-hover:text-primary"
-          />
+        <span className="block text-sm font-semibold">
+          {t({
+            ja: "日本語博物館：五年間の記録",
+            en: "The Japanese museum: five years on display",
+          })}
+        </span>
+        <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
+          {t({
+            ja: `スピーチの動画${clips.length}本と、試験、Anki、年表を公開しています。`,
+            en: `Watch ${clips.length} videos of me speaking, and see the exams, Anki and the timeline.`,
+          })}
         </span>
 
         <span className="mt-4 grid grid-cols-3 gap-2">
@@ -115,6 +107,16 @@ export function JapaneseTeaser() {
               </span>
             </span>
           ))}
+        </span>
+
+        <span className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <span className="inline-flex items-center justify-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity group-hover:opacity-90">
+            {t({ ja: "日本語博物館を見る", en: "Visit the Japanese museum" })}
+            <ArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
+          </span>
+          <span className="text-center font-mono text-xs text-muted-foreground">
+            jp.luqmanhadi.com
+          </span>
         </span>
       </Link>
     </Section>

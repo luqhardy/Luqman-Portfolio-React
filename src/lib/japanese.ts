@@ -117,3 +117,22 @@ export const spokenLanguages: { name: Bilingual; note: Bilingual }[] = [
   { name: { ja: "英語", en: "English" }, note: { ja: "TOEIC 985", en: "TOEIC 985" } },
   { name: { ja: "インドネシア語", en: "Indonesian" }, note: { ja: "通訳で使用", en: "Used in interpreting" } },
 ];
+
+export const clips: {
+  id: string;
+  date: string;
+  length: string;
+  title: Bilingual;
+  note: Bilingual;
+  wide?: boolean;
+}[] = [
+  { id: "highlight", date: "2026.10", length: "1:27", title: { ja: "留学生が5社から内定をもらうまで", en: "How I got 5 job offers in Japan" }, note: { ja: "神戸電子 オープンキャンパス講演のハイライト", en: "Highlights of the Kobe Denshi Open Campus talk" } },
+  { id: "clip-final-round", date: "2026.10", length: "0:42", title: { ja: "最終面接で落ちた話と、5社の内定", en: "Rejected in the final round, then 5 offers" }, note: { ja: "講演より", en: "From the talk" } },
+  { id: "clip-one-of-300", date: "2026.10", length: "0:18", title: { ja: "日本人300人の中の留学生1人", en: "One international student among 300" }, note: { ja: "講演より", en: "From the talk" } },
+  { id: "clip-sabetsuka", date: "2026.10", length: "0:48", title: { ja: "覚えてほしい言葉「差別化」", en: "One word to remember: 差別化" }, note: { ja: "質疑応答より", en: "From the Q&A" } },
+  { id: "clip-communication", date: "2026.10", length: "0:43", title: { ja: "資格より、話せること", en: "Speaking matters more than certificates" }, note: { ja: "質疑応答より", en: "From the Q&A" } },
+  { id: "clip-apps", date: "2026.10", length: "0:55", title: { ja: "日本語学習アプリ、どれがおすすめ？", en: "Which app should you use to learn Japanese?" }, note: { ja: "質疑応答より", en: "From the Q&A" } },
+  { id: "clip-toeic", date: "2026.10", length: "0:59", title: { ja: "TOEICは受けた方がいい？", en: "Is TOEIC worth taking?" }, note: { ja: "質疑応答より", en: "From the Q&A" } },
+  { id: "lt-talk", date: "2026.07", length: "3:17", title: { ja: "LT会：自作たまごっちの発表", en: "Lightning talk: building a Tamagotchi" }, note: { ja: "原稿なしの発表部分", en: "The unscripted talk itself" }, wide: true },
+  { id: "kansai-speech", date: "2024.01", length: "6:53", title: { ja: "関西大学 修了スピーチ全編", en: "Full Kansai University farewell speech" }, note: { ja: "原稿あり。前半は英語、後半は日本語", en: "Scripted. Starts in English, then Japanese" } },
+];
