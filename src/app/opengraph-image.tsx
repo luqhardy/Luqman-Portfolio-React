@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Luqman Hadi — Mohamed Luqman Hadi Bin Mohamed Suhairi";
+export const alt = "Luqman Hadi — AI Systems Development, Kobe Institute of Computing";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,10 +39,7 @@ export default function OpengraphImage() {
             luqmanhadi.com
           </div>
           <div style={{ fontSize: 76, marginTop: 28, fontWeight: 600 }}>
-            Luqman Hadi Suhairi
-          </div>
-          <div style={{ fontSize: 27, marginTop: 18, color: "#918d85" }}>
-            Mohamed Luqman Hadi Bin Mohamed Suhairi
+            Luqman Hadi
           </div>
         </div>
 

@@ -21,21 +21,19 @@ const SITE_URL = "https://luqmanhadi.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  // Leads with the full name rather than "Luqman Hadi" on its own, which
-  // collides with several unrelated people in search results.
   title: {
-    default: "Luqman Hadi Suhairi ルクマン・ハディ — AI Systems & Cloud, Kōbe",
-    template: "%s — Luqman Hadi Suhairi",
+    default: "Luqman Hadi ルクマン・ハディ — AI Systems & Cloud, Kōbe",
+    template: "%s — Luqman Hadi",
   },
   description:
-    "Mohamed Luqman Hadi Bin Mohamed Suhairi (モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ) — Japanese Government (MEXT) Scholar, Kobe Institute of Computing, AI Systems Development.",
+    "Luqman Hadi (ルクマン・ハディ) — Japanese Government (MEXT) Scholar, Kobe Institute of Computing, AI Systems Development.",
   // The apex redirects to www, so name one of them as canonical rather than
   // letting search engines split ranking between the two.
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Luqman Hadi Suhairi ルクマン・ハディ",
+    title: "Luqman Hadi ルクマン・ハディ",
     description:
-      "Mohamed Luqman Hadi Bin Mohamed Suhairi — small, specific tools for the web, made in Kōbe, Japan.",
+      "Luqman Hadi — small, specific tools for the web, made in Kōbe, Japan.",
     type: "profile",
     url: SITE_URL,
     locale: "ja_JP",
@@ -43,13 +41,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luqman Hadi Suhairi ルクマン・ハディ",
+    title: "Luqman Hadi ルクマン・ハディ",
     description:
-      "Mohamed Luqman Hadi Bin Mohamed Suhairi — AI Systems Development student in Kōbe, heading toward cloud and infrastructure engineering.",
+      "Luqman Hadi — AI Systems Development student in Kōbe, heading toward cloud and infrastructure engineering.",
   },
-  authors: [{ name: profile.legalName, url: SITE_URL }],
-  creator: profile.legalName,
-  publisher: profile.legalName,
+  authors: [{ name: profile.fullName, url: SITE_URL }],
+  creator: profile.fullName,
+  publisher: profile.fullName,
   robots: {
     index: true,
     follow: true,
@@ -59,18 +57,15 @@ export const metadata: Metadata = {
 
 /**
  * Person schema. The point of alternateName here is that this person is
- * referred to by several quite different strings across the web — an official
- * Malaysian full name, a shortened English one, and two katakana renderings —
- * and this is what tells a search engine they are one entity.
+ * referred to by a few different strings across the web — English, katakana
+ * and a handle — and this is what tells a search engine they are one entity.
  */
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
-  name: profile.legalName,
+  name: profile.fullName,
   alternateName: nameVariants,
-  givenName: "Luqman Hadi",
-  familyName: "Mohamed Suhairi",
   disambiguatingDescription:
     "Malaysian software engineer based in Kōbe, Japan. Japanese Government (MEXT) scholar studying AI Systems Development at Kobe Institute of Computing, AWS and Azure certified, trilingual in Japanese, English and Malay.",
   description:

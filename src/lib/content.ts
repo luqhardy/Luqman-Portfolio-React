@@ -268,10 +268,7 @@ export const elsewhere: ElsewhereLink[] = [
 
 export const profile = {
   name: { en: "Luqman Hadi", ja: "Luqman Hadi" },
-  fullName: "Luqman Hadi Suhairi",
-  /** Full name as it appears on official records. */
-  legalName: "Mohamed Luqman Hadi Bin Mohamed Suhairi",
-  legalNameKana: "モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ",
+  fullName: "Luqman Hadi",
   kana: "ルクマン・ハディ",
   pronouns: "He/Him",
   email: "hello@luqmanhadi.com",
@@ -292,7 +289,7 @@ export const profile = {
 
   bio: {
     en: [
-      "I'm Luqman Hadi Suhairi, an AI Systems Development student at Kobe Institute of Computing on a Japanese Government (MEXT) scholarship, graduating in March 2027. I started at International Islamic University Malaysia (IIUM, Kulliyyah of ICT), self-studied Japanese to JLPT N1, spent an exchange year at Kansai University as a JASSO scholar, and have continued studying in Japan since.",
+      "I'm Luqman Hadi, an AI Systems Development student at Kobe Institute of Computing on a Japanese Government (MEXT) scholarship, graduating in March 2027. I started at International Islamic University Malaysia (IIUM, Kulliyyah of ICT), self-studied Japanese to JLPT N1, spent an exchange year at Kansai University as a JASSO scholar, and have continued studying in Japan since.",
       "Trilingual in Japanese (JLPT N1, BJT J1), English (TOEIC 985) and Malay (native). I've worked as an interpreter at Wownas Inc. and at Expo 2025 Osaka, and completed engineering internships at Kobe Digital Labo and NANO CONNECT Inc.",
       "I hold the Japanese FE certification, AWS Certified Solutions Architect – Associate and Microsoft Certified: Azure Developer Associate (AZ-204). I'm currently working toward HashiCorp Terraform Associate and the CKA, with 応用情報技術者試験 and Google Cloud Associate Cloud Engineer after that.",
     ],
@@ -403,12 +400,7 @@ export const ui = {
  * person rather than several.
  */
 export const nameVariants: string[] = [
-  "Mohamed Luqman Hadi Bin Mohamed Suhairi",
-  "MOHAMED LUQMAN HADI BIN MOHAMED SUHAIRI",
-  "Luqman Hadi Suhairi",
   "Luqman Hadi",
-  "モハメド・ルクマン・ハディ・ビン・モハメド・スハイリ",
-  "モハメド　ルクマン　ハディ　ビン　モハメド　スハイリ",
   "ルクマン・ハディ",
   "ルクマン ハディ",
   "luqhardy",
